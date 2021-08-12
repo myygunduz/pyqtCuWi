@@ -12,7 +12,7 @@
 
 
 
-| ![PopUp&outerRadius](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/popUp&outerRadius.gif) <br> PopUp  OuterRadius<br> [ PopUp Documentation](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up)   [OuterRadius Documentation](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius) |
+| ![PopUp&outerRadius](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/popUp&outerRadius.gif) <br> PopUp & OuterRadius<br> [ PopUp Documentation](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up) &  [OuterRadius Documentation](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius) |
 | :---: |
 
 </center>
