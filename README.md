@@ -18,4 +18,44 @@
 </center>
 
 
-# Producer: [Mücahit Gündüz](https://github.com/myygunduz)
+<h2 align=center> Share This Repository </h2>
+
+<table align='center'>
+    <tr>
+        <td>
+            <a href="https://web.facebook.com/sharer.php?t=This%20repo%20is%20great,%20check%20it%20out&u=https://github.com/myygunduz/Badge-Link-Creater&_rdc=1&_rdr" >
+                <img src="https://github.com/myygunduz/Badge-Link-Creater/blob/main/Assets/icons/facebook.svg" height="48" width="48" alt="Facebook"/>
+            </a>
+        </td>
+        <td>
+            <a href="https://www.facebook.com/dialog/send?link=https://github.com/myygunduz/Badge-Link-Creater&app_id=291494419107518&redirect_uri=https://github.com/myygunduz/Badge-Link-Creater" >
+                <img src="https://github.com/myygunduz/Badge-Link-Creater/blob/main/Assets/icons/messenger.svg" height="48" width="48" alt="Facebook Messenger"/>
+            </a>
+        </td>
+        <td>
+            <a href="https://twitter.com/intent/tweet?text=This%20repo%20is%20great,%20check%20it%20out&url=https://github.com/myygunduz/Badge-Link-Creater" >
+                <img src="https://github.com/myygunduz/Badge-Link-Creater/blob/main/Assets/icons/twitter.svg" height="48" width="48" alt="Twitter"/>
+            </a>
+        </td>
+        <td>
+            <a href="https://web.whatsapp.com/send?text=This%20repo%20is%20great,%20check%20it%20out https://github.com/myygunduz/Badge-Link-Creater" >
+                <img src="https://github.com/myygunduz/Badge-Link-Creater/blob/main/Assets/icons/whatsapp.svg" height="48" width="48" alt="WhatsApp"/>
+            </a>
+        </td>
+        <td>
+            <a href="https://t.me/share/url?url=https://github.com/myygunduz/Badge-Link-Creater&text=GThis%20repo%20is%20great,%20check%20it%20out" >
+                <img src="https://github.com/myygunduz/Badge-Link-Creater/blob/main/Assets/icons/telegram.svg" height="48" width="48" alt="Telegram"/>
+            </a>
+        </td>
+        <td>
+            <a href="https://www.linkedin.com/shareArticle?title=This%20repo%20is%20great,%20check%20it%20out&url=https://github.com/myygunduz/Badge-Link-Creater" >
+                <img src="https://github.com/myygunduz/Badge-Link-Creater/blob/main/Assets/icons/linkedin.svg" height="48" width="48" alt="LinkedIn"/>
+            </a>
+        </td>
+        <td>
+            <a href="https://www.reddit.com/submit?title=This%20repo%20is%20great,%20check%20it%20out&url=https://github.com/myygunduz/Badge-Link-Creater" >
+                <img src="https://github.com/myygunduz/Badge-Link-Creater/blob/main/Assets/icons/reddit.svg" height="48" width="48" alt="Reddit"/>
+            </a>
+        </td>
+    </tr>
+</table>
