@@ -1,5 +1,8 @@
-import json
+#          Custom Widgets For PyQt5 Module           #
+#          GPL 3.0 - myygunduz - pyqtCuWi            #
+#        https://github.com/myygunduz/pyqtCuWi       #
 
+import json
 
 def writeJ(contents, file, indent: int = 2):
     with open(file, "w") as f:

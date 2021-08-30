@@ -1,4 +1,15 @@
 # pyqtCuWi
+<p>
+  <img src="https://img.shields.io/badge/python-3.6%2B-informational?style=flat-square&logo=python">
+  <img src="https://img.shields.io/badge/license-GPL%203.0-succes.svg?style=flat-square&logo=license">
+  <img src="https://img.shields.io/badge/version-1.1.0-important?style=flat-square">
+</p>
+
+## Contents
+ - [IconButton](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#iconbutton)
+ - [Rank Widget](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#rank-widget)
+ - [PopUp](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up)
+ - [Loading Screen](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#loading-screen)
 
 ### IconButton
 
@@ -90,6 +101,8 @@ if __name__ == '__main__':
     window.show()
     app.exec_()
 ```
+[File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfIconButton.py)
+
 #### Output
 <img src= "https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/iconButton.gif" width="500">
 
@@ -172,6 +185,8 @@ trying = main()
 trying.show()
 app.exec_()
 ```
+[File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfRankWidget.py)
+
 #### Output
 <img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/rankWidget.gif" width="500">
 
@@ -242,9 +257,8 @@ Outer Radius has no signals, but you can generate signals via outerRadius.widget
 #### Example 
 `Notes example is for popUp and outerRadius`
 ```py
-
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt,QSize
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QApplication
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QCursor
 from pyqtCuWi import popUp,outerRadius
 class window(QWidget):
@@ -419,5 +433,102 @@ if __name__ == '__main__':
     window.show()
     app.exec_() 
 ```
+[File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampeOfPopUp%26OuterRadius.py)
+
 #### Output:
 <img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/popUp&outerRadius.gif">
+
+
+### Loading Screen
+#### Parameters
+
+
+- `appName` (str) : The app name shown above the window. (No default)
+- `time` (int) : Sets prograss bar time (Default : 100)
+- `theme ['dark' or 'light']` (tuple) : Sets theme type. (Default : "dark")
+
+
+#### Methods
+
+ - `addSubTitle(subTitle)` (str or list) : Allows you to add subtitle texts.
+ - `deleteDeveloper()` : Allows you to remove the text 'Developer by Mücahit Gündüz' in the lower right.
+ - `setAppName(appName)` (str) : Sets the app name shown above the window.
+
+#### Signals
+
+- `finished` : It works when the program is finished.
+
+#### Example 
+```py
+from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QLabel, QPushButton
+from PyQt5.QtCore import Qt
+from pyqtCuWi import loadingScreen
+
+class main(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.setFixedSize(640,480)
+        self.mainLayout = QVBoxLayout()
+        self.setLayout(self.mainLayout)
+
+        self.setStyleSheet("background-color:#212121;")
+
+        self.text = QLabel("Operation Successfully Completed")
+        self.text.setStyleSheet('QLabel{'
+                        'color:white;'
+                        'font:40px Times;}')
+        self.text.setAlignment(Qt.AlignCenter)
+        self.text.setFixedSize(self.width(),self.height())
+
+        self.finishButton = QPushButton("Finished")
+        self.finishButton.setStyleSheet('QPushButton{'
+                            'border:4px solid red;'
+                            'color:red;'
+                            'background-color:rgba(0,0,0,0);'
+                            'font: 30px Times;}'
+                            'QPushButton:hover{'
+                            'border:4px solid rgba(0,0,0,0);'
+                            'color:#212121;'
+                            'background-color:red;'
+                            'font: 30px Times;}'
+                            'QPushButton:pressed{'
+                            'border:4px solid rgba(0,0,0,10);'
+                            'color:#212121;'
+                            'background-color:rgba(255,0,0,80);'
+                            'font: 30px Times;}')
+        self.finishButton.setFixedWidth(300)
+        self.finishButton.clicked.connect(lambda: self.deleteLater())
+
+        self.mainLayout.addWidget(self.text,alignment=Qt.AlignCenter)
+        self.mainLayout.addWidget(self.finishButton,alignment=Qt.AlignCenter)
+
+def finishedFunction():
+    mainWindow.show()
+    loadingWindow.deleteLater()
+if __name__ == '__main__':
+    app=QApplication([])
+    mainWindow = main()
+    loadingWindow=loadingScreen("Program",100)
+
+    loadingText =["Is this Windows?",
+                "Adjusting flux capacitor...",
+                "Please wait until the sloth starts moving.",
+                "Don't break your screen yet!",
+                "I swear it's almost done.",
+                "Let's take a mindfulness minute...",
+                "Unicorns are at the end of this road, I promise.",
+                "Listening for the sound of one hand clapping...",
+                "Keeping all the 1's and removing all the 0's...",
+                "Putting the icing on the cake. The cake is not a lie...",
+                "Cleaning off the cobwebs..."]
+    #For more message: https://gist.github.com/meain/6440b706a97d2dd71574769517e7ed32
+    loadingWindow.addSubTitle(loadingText)
+    loadingWindow.finished.connect(finishedFunction)
+    loadingWindow.show()
+    app.exec_()
+```
+[File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfLoadingScreen.py)
+
+#### Output:
+<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/loadingScreen.gif">
