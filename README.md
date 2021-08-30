@@ -4,27 +4,34 @@
   <img src="https://img.shields.io/badge/license-GPL%203.0-succes.svg?style=flat-square&logo=license">
   <img src="https://img.shields.io/badge/version-1.1.0-important?style=flat-square">
 </p>
-<h2>Custom Widgets </h2>
-<hr>
 
-### [Icon Button](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#iconbutton)
+<h2> <a href="https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md">Documentation</a></h2>
+<h2 align=center>Custom Widgets</h2>
+
+
+## [Icon Button](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#iconbutton)
 
 My first custom widget. To dynamically change the icon.
 #### [Example](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfIconButton.py)
 <img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/iconButton.gif">
 
-### [Rank Widget](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#rank-widget)
+<hr>
+
+## [Rank Widget](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#rank-widget)
 
 To sort names.
 #### [Example](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfRankWidget.py)
 <img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/rankWidget.gif">
 
-### [PopUp](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up)
+<hr>
+
+## [PopUp](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up)
 
 To create a popup.
 
+<hr>
 
-### [OuterRadius](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius)
+## [OuterRadius](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius)
 
 Allows external radius to be added to both sides of a widget you want.
 
@@ -33,9 +40,9 @@ Allows external radius to be added to both sides of a widget you want.
 #### [Example](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampeOfPopUp%26OuterRadius.py)
 <img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/popUp&outerRadius.gif">
 
+<hr>
 
-
-### [Loading Screen]()
+## [Loading Screen](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#loading-screen)
 
 A loading screen that appears before the main window.
 
