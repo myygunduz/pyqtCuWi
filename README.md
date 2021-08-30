@@ -23,6 +23,7 @@ To sort names.
 
 To create a popup.
 
+
 ### [OuterRadius](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius)
 
 Allows external radius to be added to both sides of a widget you want.
@@ -81,4 +82,7 @@ A loading screen that appears before the main window.
             </a>
         </td>
     </tr>
+
 </table>
+
+
