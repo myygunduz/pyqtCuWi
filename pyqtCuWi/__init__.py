@@ -3,9 +3,10 @@
 #        https://github.com/myygunduz/pyqtCuWi       #
 
 
-__version__ = '1.0.2'
+__version__ = '1.1.0'
 
 from .iconbutton import iconButton 
 from .rankwidget import rankWidget
 from .popup import  popUp
 from .outerradius import  outerRadius
+from .loadingscreen import  loadingScreen

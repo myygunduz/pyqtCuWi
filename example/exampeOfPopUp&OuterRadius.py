@@ -1,6 +1,5 @@
-
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt,QSize
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QApplication
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QCursor
 from pyqtCuWi import popUp,outerRadius
 class window(QWidget):
