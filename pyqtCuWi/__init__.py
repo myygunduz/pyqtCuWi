@@ -3,7 +3,7 @@
 #        https://github.com/myygunduz/pyqtCuWi       #
 
 
-__version__ = '1.2.0'
+__version__ = '1.2.1'
 
 from .iconbutton import iconButton 
 from .rankwidget import rankWidget
