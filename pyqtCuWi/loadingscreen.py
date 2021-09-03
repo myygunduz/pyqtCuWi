@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QWidget, QDesktopWidget, QVBoxLayout, QLabel
 from PyQt5.QtCore import pyqtSignal, QUrl, Qt
 from PyQt5.QtGui import QDesktopServices
 from random import choice
-from .pyqtCuWiModules.progressBar import ProgressBar
+from .pyqtCuWiModules import ProgressBar
 
 
 
@@ -45,6 +45,10 @@ class loadingScreen(QWidget):
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.__widgets()
         self.__qss()
+    
+    def __repr__(self):
+        return '<pyqtCuWi.loadingScreen()>'
+    
     def __widgets(self):
         self._mainLayout = QVBoxLayout()
         self._mainLayout.setContentsMargins(0,0,0,0)
@@ -89,9 +93,6 @@ class loadingScreen(QWidget):
         self.subTitle.setText(changeText)
         self.loadingText.setText("Loading." if self.loadingText.text()=="Loading.." else "Loading..")
 
-
-    def __repr__(self):
-        return '<pyqtCuWi.loadingScreen()>'
     
     def __qss(self):
         if self._theme != "custom":

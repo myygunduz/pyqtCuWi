@@ -84,6 +84,9 @@ class rankWidget(QScrollArea):
 
         self._hideButton = True
 
+    def __repr__(self):
+        return "<pyqtCuWi.rankWidget()>"
+
     def gettext(self,widget:object):
         return widget['text'].text()
 
@@ -221,8 +224,6 @@ class rankWidget(QScrollArea):
         self.layout.removeWidget(buttonWidget)
         self.__createButton(buttonText,index)
         
-    def __repr__(self):
-        return "<myygunduz.rankWidget()>"
     
     class upAndDownButton(QWidget):
         upSignal = pyqtSignal(object)

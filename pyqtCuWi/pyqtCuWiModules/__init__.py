@@ -3,3 +3,4 @@
 #        https://github.com/myygunduz/pyqtCuWi       #
 
 from .jsonHelper import readJ,writeJ
+from .progressBar import ProgressBar

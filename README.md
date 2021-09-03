@@ -9,45 +9,13 @@
 <h2 align=center>Custom Widgets</h2>
 
 
-## [Icon Button](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#iconbutton)
-
-My first custom widget. To dynamically change the icon.
-#### [Example](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfIconButton.py)
-<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/iconButton.gif">
-
-<hr>
-
-## [Rank Widget](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#rank-widget)
-
-To sort names.
-#### [Example](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfRankWidget.py)
-<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/rankWidget.gif">
-
-<hr>
-
-## [PopUp](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up)
-
-To create a popup.
-
-<hr>
-
-## [OuterRadius](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius)
-
-Allows external radius to be added to both sides of a widget you want.
-
-
-```Notes example is for popUp and outerRadius ```
-#### [Example](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampeOfPopUp%26OuterRadius.py)
-<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/popUp&outerRadius.gif">
-
-<hr>
-
-## [Loading Screen](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#loading-screen)
-
-A loading screen that appears before the main window.
-
-#### [Example](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfLoadingScreen.py)
-<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/loadingScreen.gif">
+|  ID | Name | Description | Example | Output Of Example | Last Update |
+| :-: | :--: | :---------: | :-----: | :---------------: | :---------: |
+|  1  | [Icon Button](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#iconbutton) | My first custom widget. To dynamically change the icon. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfIconButton.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/iconButton.gif) | Aug 8, 2021 |
+|  2  | [Rank Widget](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#rank-widget) | To sort names. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfRankWidget.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/rankWidget.gif) | Aug 8, 2021 |
+|  3  | [PopUp](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up) | To create a popup. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampeOfPopUp%26OuterRadius.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/popUp.gif) | Aug 8, 2021 |
+|  4  | [OuterRadius](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius) | Allows external radius to be added to both sides of a widget you want. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampeOfPopUp%26OuterRadius.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/outerRadius.gif) | Aug 8, 2021 |
+|  5  | [Loading Screen](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#loading-screen) | A loading screen that appears before the main window. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfLoadingScreen.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/loadingScreen.gif) | Aug 30, 2021 |
 
 
 <hr>

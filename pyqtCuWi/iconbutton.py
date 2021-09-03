@@ -39,6 +39,11 @@ class iconButton(QPushButton):
         
 
         self.__widgetsUpdate()
+
+    def __repr__(self):
+        return "<pyqtCuWi.iconButton()>"
+
+    
     def __widgetsUpdate(self):
         self._layout.removeWidget(self.label)
         self._layout.removeWidget(self.icon)
@@ -67,9 +72,6 @@ class iconButton(QPushButton):
         self.__checkIconSize()
         return f"<html><img src='{icon}'width='{self._iconsize[0]}' height='{self._iconsize[1]}'></html>" if icon != None else ""
 
-
-    def __repr__(self):
-        return "<pyqtCuWi.iconButton()>"
     
     #Get methods
     def getText(self):
