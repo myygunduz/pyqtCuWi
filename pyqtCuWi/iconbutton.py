@@ -5,7 +5,7 @@
 #                    iconButton                      #
 
 
-from PyQt5.QtWidgets import QGroupBox, QHBoxLayout,QLabel, QPushButton, QWidget
+from PyQt5.QtWidgets import QHBoxLayout,QLabel, QPushButton
 from PyQt5.QtCore import pyqtSignal,Qt
 
 from .pyqtCuWiErrors import NoIconSize, SizeError, UndefinedDirection, NoIcon
