@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyqtCuWi",
-    version="2.0.0",
+    version="2.0",
     author="Mücahit Yusuf Yasin Gündüz",
     author_email="myygunduz@gmail.com",
     description="Custom Widgets For PyQt5",
@@ -15,7 +15,7 @@ setuptools.setup(
     project_urls={
     'Documentation': 'https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md',
     },
-    download_url="https://github.com/myygunduz/pyqtCuwi/archive/refs/tags/2.0.0.tar.gz",
+    download_url="https://github.com/myygunduz/pyqtCuwi/archive/refs/tags/2.0.tar.gz",
     packages=setuptools.find_packages(),
     scripts=['deepface/models/face-recognition-ensemble-model.txt'],
     classifiers=[

@@ -3,11 +3,21 @@
   <img src="https://img.shields.io/badge/python-3.6%2B-informational?style=flat-square&logo=python">
   <img src="https://img.shields.io/badge/license-GPL%203.0-succes.svg?style=flat-square&logo=license">
   <img src="https://img.shields.io/badge/version-2.0.0-important?style=flat-square">
+  <a href="https://pypi.org/project/pyqtCuWi/"><img src="https://img.shields.io/badge/pypi-pyqtCuWi-cyan?style=flat-square"></a>
 </p>
 
-<h2> <a href="https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md">Documentation</a></h2>
-<h2 align=center>Custom Widgets</h2>
 
+<h2>Use PIP To Download</h2>
+
+```
+pip install pyqtCuWi
+```
+OR
+```
+python -m pip install pyqtCuWi
+```
+
+<h2>Custom Widgets</h2>
 
 |  ID | Name | Description | Example | Output Of Example | Last Update |
 | :-: | :--: | :---------: | :-----: | :---------------: | :---------: |
@@ -19,8 +29,10 @@
 |  6  | [QFBoxLayout](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qfboxlayout) | QFreeBoxLayout. Widget but its name is layout. To show widgets as scattered images. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfQFBoxLayout.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/QFBoxLayout.gif?raw=true) | Sep 3, 2021 |
 |  7  | [Tag Area](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#tag-area) | A widget for tags. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfTagArea.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/tagArea.gif?raw=true) | Sep 4, 2021 |
 
+<h2>License</h2>
+<p><a href="https://github.com/myygunduz/pyqtCuwi/blob/main/LICENSE.txt">GPL v3.0</a> © Mücahit Yusuf Yasin Gündüz
 
-<hr>
+<h1 align=center> Share This Repository </h1>
 <table align='center'>
     <tr>
         <td>
@@ -61,5 +73,4 @@
     </tr>
 
 </table>
-
 
