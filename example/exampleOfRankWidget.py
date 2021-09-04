@@ -39,6 +39,6 @@ class main(QWidget):
     def addbutton(self,text):
         self.scroolBar.addbutton(text)
 app = QApplication([])
-trying = main()
-trying.show()
+main = main()
+main.show()
 app.exec_()

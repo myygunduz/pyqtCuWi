@@ -4,3 +4,4 @@
 
 from .jsonHelper import readJ,writeJ
 from .progressBar import ProgressBar
+from .clearList import clearOfList

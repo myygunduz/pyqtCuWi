@@ -3,11 +3,15 @@
 #        https://github.com/myygunduz/pyqtCuWi       #
 
 
-__version__ = '1.2.2'
+__version__ = '2.0.0'
 
+# version 0.0.0
 from .iconbutton import iconButton 
 from .rankwidget import rankWidget
 from .popup import  popUp
 from .outerradius import  outerRadius
+
+# version 1.0.0
 from .loadingscreen import  loadingScreen
 from .qfboxlayout import  QFBoxLayout
+from .tagarea import  tagArea

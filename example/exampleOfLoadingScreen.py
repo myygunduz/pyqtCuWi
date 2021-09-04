@@ -42,11 +42,11 @@ class main(QWidget):
         self.mainLayout.addWidget(self.finishButton,alignment=Qt.AlignCenter)
 
 def finishedFunction():
-    mainWindow.show()
+    main.show()
     loadingWindow.deleteLater()
 if __name__ == '__main__':
     app=QApplication([])
-    mainWindow = main()
+    main = main()
     loadingWindow=loadingScreen("Program",100)
 
     loadingText =["Is this Windows?",

@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QApplication, QVBoxLayout,QWidget
 from PyQt5.QtCore import QTimer
 from pyqtCuWi import IconButton
 
-class window(QWidget):
+class main(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -53,7 +53,7 @@ class window(QWidget):
 
 if __name__ == '__main__':
     app = QApplication([])
-    window = window()
-    window.show()
+    main = main()
+    main.show()
     app.exec_()
 

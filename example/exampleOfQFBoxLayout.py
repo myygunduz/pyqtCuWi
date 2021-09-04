@@ -18,7 +18,7 @@ def clearOfList(InputList:list) -> list :
     operation(InputList)
     return Output
 
-class tagArea(QWidget):
+class main(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -151,6 +151,6 @@ class customButton(QWidget):
 
 if __name__ == '__main__':
     app = QApplication([])
-    tagArea = tagArea()
-    tagArea.show()
+    main = main()
+    main.show()
     app.exec_()

@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QCursor
 from pyqtCuWi import popUp,outerRadius
-class window(QWidget):
+class main(QWidget):
     def __init__(self):
         super().__init__()
         self.widgetWidget = QWidget()
@@ -171,7 +171,7 @@ class window(QWidget):
 
 if __name__ == '__main__':
     app = QApplication([])
-    window = window()
-    window.show()
+    main = main()
+    main.show()
     app.exec_() 
     

@@ -2,7 +2,7 @@
 <p>
   <img src="https://img.shields.io/badge/python-3.6%2B-informational?style=flat-square&logo=python">
   <img src="https://img.shields.io/badge/license-GPL%203.0-succes.svg?style=flat-square&logo=license">
-  <img src="https://img.shields.io/badge/version-1.1.0-important?style=flat-square">
+  <img src="https://img.shields.io/badge/version-2.0.0-important?style=flat-square">
 </p>
 
 ## Contents
@@ -12,6 +12,7 @@
  - [Loading Screen](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#loading-screen)
 
 ### IconButton
+My first custom widget. To dynamically change the icon. 
 
 #### Parameters
 
@@ -46,7 +47,7 @@ from PyQt5.QtWidgets import QApplication, QVBoxLayout,QWidget
 from PyQt5.QtCore import QTimer
 from pyqtCuWi import IconButton
 
-class window(QWidget):
+class main(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -97,8 +98,8 @@ class window(QWidget):
 
 if __name__ == '__main__':
     app = QApplication([])
-    window = window()
-    window.show()
+    main = main()
+    main.show()
     app.exec_()
 ```
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfIconButton.py)
@@ -112,6 +113,7 @@ if __name__ == '__main__':
 
 
 ### Rank Widget
+To sort names.
 
 #### Notes
 
@@ -181,8 +183,8 @@ class main(QWidget):
     def addbutton(self,text):
         self.scroolBar.addbutton(text)
 app = QApplication([])
-trying = main()
-trying.show()
+main = main()
+main.show()
 app.exec_()
 ```
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfRankWidget.py)
@@ -193,6 +195,7 @@ app.exec_()
 
 
 ### Pop Up
+To create a popup.
 
 #### Notes
 
@@ -236,6 +239,7 @@ ImageBox is used. [Click](https://github.com/kadir014/pyqt5-custom-widgets/blob/
 [Click](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#output-3) for output.
 
 ### Outer Radius
+ Allows external radius to be added to both sides of a widget you want.
 
 #### Parameters
 
@@ -261,7 +265,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QCursor
 from pyqtCuWi import popUp,outerRadius
-class window(QWidget):
+class main(QWidget):
     def __init__(self):
         super().__init__()
         self.widgetWidget = QWidget()
@@ -429,8 +433,8 @@ class window(QWidget):
 
 if __name__ == '__main__':
     app = QApplication([])
-    window = window()
-    window.show()
+    main = main()
+    main.show()
     app.exec_() 
 ```
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampeOfPopUp%26OuterRadius.py)
@@ -440,8 +444,9 @@ if __name__ == '__main__':
 
 
 ### Loading Screen
-#### Parameters
+A loading screen that appears before the main window.
 
+#### Parameters
 
 - `appName` (str) : The app name shown above the window. (No default)
 - `time` (int) : Sets prograss bar time (Default : 100)
@@ -504,11 +509,11 @@ class main(QWidget):
         self.mainLayout.addWidget(self.finishButton,alignment=Qt.AlignCenter)
 
 def finishedFunction():
-    mainWindow.show()
+    main.show()
     loadingWindow.deleteLater()
 if __name__ == '__main__':
     app=QApplication([])
-    mainWindow = main()
+    main = main()
     loadingWindow=loadingScreen("Program",100)
 
     loadingText =["Is this Windows?",
@@ -560,7 +565,7 @@ def clearOfList(InputList:list) -> list :
     operation(InputList)
     return Output
 
-class tagArea(QWidget):
+class main(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -693,11 +698,125 @@ class customButton(QWidget):
 
 if __name__ == '__main__':
     app = QApplication([])
-    tagArea = tagArea()
-    tagArea.show()
+    main = main()
+    main.show()
     app.exec_()
 ```
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfQFBoxLayout.py)
 
 #### Output:
 <img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/QFBoxLayout.gif">
+
+### Tag Area
+A widget for tags.
+
+#### Parameters
+
+- `Type [oneLine, freeBox]` (str) : The app name shown above the window. (Default : "oneLine")
+
+#### Methods
+
+ - `addHint(hintText)` (str) : Adds a hint text to tags entry area.
+ - `onlyHint(value)` (bool) : Sets whether the user can only use hint texts.
+ - `setTagLimit(limitValue)` (int) : Sets the label limit. The tag limit prevents creating more tags than the set amount.
+ - `getTags()` : Returns all entered tags.
+
+#### Example
+```py
+from PyQt5.QtWidgets import QWidget, QApplication, QVBoxLayout, QLabel, QTextEdit, QLineEdit, QPushButton
+
+from pyqtCuWi import  tagArea
+
+class main(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.mainLayout = QVBoxLayout()
+        self.setLayout(self.mainLayout)
+        
+        self.title = QLabel("Create Post")
+        self.mainLayout.addWidget(self.title)
+
+        self.entryTitle = QLineEdit()
+        self.entryTitle.setPlaceholderText("Title")
+        self.mainLayout.addWidget(self.entryTitle)
+
+        self.entryContent = QTextEdit()
+        self.entryContent.setPlaceholderText("Entry content")
+        self.mainLayout.addWidget(self.entryContent)
+
+        self.entryTag = tagArea("freeBox")
+        self.entryTag.setTagLimit(3)
+        self.mainLayout.addWidget(self.entryTag)
+
+        self.share = QPushButton("Share")
+        self.share.clicked.connect(self.printPost)
+        self.share.setObjectName("share")
+        self.mainLayout.addWidget(self.share)
+        self.__qss()
+    def __qss(self):
+        self.setStyleSheet("""
+        QWidget{
+            background-color:rgb(251, 249, 250);
+        }
+        QLabel{
+            font: 30px Montserrat Black;
+            color:rgb(253, 0, 84);
+            
+        }
+        QLineEdit{
+            font-family: Montserrat ;
+            color:rgb(253, 0, 84);
+            selection-background-color:rgb(253, 0, 84);
+            selection-color:rgb(251, 249, 250);
+        }
+        QTextEdit{
+            color:rgb(253, 0, 84);
+            font-family: Montserrat;
+            selection-background-color:rgb(253, 0, 84);
+            selection-color:rgb(251, 249, 250);
+        }
+        QPushButton{
+            font-family: Montserrat Black;
+            color:#F9F9F9;
+        }
+        QPushButton#share{
+            font: 20px Montserrat Black;
+            background-color:rgb(253, 0, 84);
+            color:rgb(251, 249, 250);
+        }
+        QPushButton#share:pressed{
+            font: 20px Montserrat Black;
+            background-color:rgb(251, 249, 250);
+            color:rgb(253, 0, 84);
+        }
+        """)
+
+    def printPost(self):
+        tags = ""
+        for i in self.entryTag.getTags():
+            tags += ' '+i if i.startswith("#") else f' #{i}'
+        text = (f"""
+        ====================   POST   ====================        
+
+        {self.entryTitle.text().strip().upper() if self.entryTitle.text().strip() != "" else "Title Empty"}:
+            {self.entryContent.toPlainText().strip().capitalize() if self.entryContent.toPlainText().strip() != "" else "Post Empty"}
+
+        Tags:
+            {tags if tags != "" else "Tags Empty"}
+
+                                            Created by myygunduz.
+                """)
+
+        print(text)
+
+if __name__ == '__main__':
+    app = QApplication([])
+    main = main()
+    main.show()
+    app.exec_()
+```
+[File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfTagArea.py)
+
+#### Output:
+<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/tagArea.gif">

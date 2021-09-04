@@ -2,7 +2,7 @@
 <p>
   <img src="https://img.shields.io/badge/python-3.6%2B-informational?style=flat-square&logo=python">
   <img src="https://img.shields.io/badge/license-GPL%203.0-succes.svg?style=flat-square&logo=license">
-  <img src="https://img.shields.io/badge/version-1.2.2-important?style=flat-square">
+  <img src="https://img.shields.io/badge/version-2.0.0-important?style=flat-square">
 </p>
 
 <h2> <a href="https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md">Documentation</a></h2>
@@ -17,6 +17,7 @@
 |  4  | [OuterRadius](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius) | Allows external radius to be added to both sides of a widget you want. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampeOfPopUp%26OuterRadius.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/outerRadius.gif) | Aug 8, 2021 |
 |  5  | [Loading Screen](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#loading-screen) | A loading screen that appears before the main window. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfLoadingScreen.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/loadingScreen.gif) | Aug 30, 2021 |
 |  6  | [QFBoxLayout](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qfboxlayout) | QFreeBoxLayout. Widget but its name is layout. To show widgets as scattered images. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfQFBoxLayout.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/QFBoxLayout.gif) | Sep 3, 2021 |
+|  7  | [Tag Area](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#tag-area) | A widget for tags. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfTagArea.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/tagArea.gif) | Sep 4, 2021 |
 
 
 <hr>
