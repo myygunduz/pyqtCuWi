@@ -29,7 +29,7 @@ class tagArea(QWidget):
         self.completer = QCompleter(self._hintTags)
         self.entry = QLineEdit()
         self.entry.setCompleter(self.completer)
-        self.entry.returnPressed.connect(self.__add)
+        self.entry.returnPressed.connect(self.add)
         self.entry.setPlaceholderText("Entry the tag name.")
         self._mainLayout.addWidget(self.entry)
 
@@ -64,7 +64,7 @@ class tagArea(QWidget):
             self._mainLayout.addWidget(self.scroolbar)
             self.scroolbar.setWidget(self.layout)
 
-    def __add(self):
+    def add(self, value = None):
         if isinstance(self._tagLimit,int) and self._tagLimit > len(self._tags):
             control = True
         elif isinstance(self._tagLimit,bool): control = True
@@ -72,7 +72,7 @@ class tagArea(QWidget):
             control = False
             self.entry.setText("Tag Limit Exceeded")
         if control:
-            tagText = self.entry.text().strip()
+            tagText = self.entry.text().strip() if value == None else value
             if self._hintControl:
                 if tagText in self._hintTags:
                     button = customButton(tagText)

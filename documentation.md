@@ -716,6 +716,7 @@ A widget for tags.
 
 #### Methods
 
+ - `add(tagText)` (str) : Adds a tag to tags area.
  - `addHint(hintText)` (str) : Adds a hint text to tags entry area.
  - `onlyHint(value)` (bool) : Sets whether the user can only use hint texts.
  - `setTagLimit(limitValue)` (int) : Sets the label limit. The tag limit prevents creating more tags than the set amount.
