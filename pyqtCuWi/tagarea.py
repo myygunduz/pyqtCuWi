@@ -111,6 +111,12 @@ class tagArea(QWidget):
     def getTags(self) -> list:
         return self._tags
 
+    def clearTags(self) -> None:
+        self._tags = []
+        self.layout.clear()
+        self.entry.setText("")
+
+
 
 class customButton(QWidget):
     clickedCloseButton = pyqtSignal(object)

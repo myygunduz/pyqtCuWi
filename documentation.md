@@ -544,6 +544,7 @@ QFreeBoxLayout. Widget but its name is layout. To show widgets as scattered imag
 
 - `addWidget(widget)` (QObject) : Adds a widget.
 - `removeWidget(widget)` (QObject) : Removes a widget.
+- `clear()` : Clears all widget.
 - `setSpacing(value)` (int) : Sets the value of spacing.
 - `setAlignment(QT.Corner) [TopLeftCorner, TopRightCorner, BottomLeftCorner, BottomRightCorner]` : Sets the type of alignment.
 
@@ -721,6 +722,7 @@ A widget for tags.
  - `onlyHint(value)` (bool) : Sets whether the user can only use hint texts.
  - `setTagLimit(limitValue)` (int) : Sets the label limit. The tag limit prevents creating more tags than the set amount.
  - `getTags()` : Returns all entered tags.
+ - `clearTags()` : Clears all tags.
 
 #### Example
 ```py

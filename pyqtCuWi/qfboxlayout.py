@@ -114,6 +114,13 @@ class QFBoxLayout(QWidget):
         widget.deleteLater()
         self.__reflesh()
 
+    def clear(self, widget:QWidget) -> None:
+        #   Delete all Widgets
+        for i in self._widgets:
+            i.deleteLater()
+        self._widgets = {}
+        self.__reflesh()
+
     def setSpacing(self, value:int) ->  None:
         #    Sets value of spacing.
         self._spacing = value
