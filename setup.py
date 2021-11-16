@@ -16,7 +16,7 @@ setuptools.setup(
     project_urls={
     'Documentation': 'https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md',
     },
-    download_url="https://github.com/myygunduz/pyqtCuWi/archive/refs/tags/pyqt.tar.gz",
+    download_url="https://github.com/myygunduz/pyqtCuWi/archive/refs/tags/2.0.3.tar.gz",
     packages=setuptools.find_packages(),
     scripts=['deepface/models/face-recognition-ensemble-model.txt'],
     classifiers=[

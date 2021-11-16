@@ -1,12 +1,12 @@
 Metadata-Version: 2.1
 Name: pyqtCuWi
-Version: 2.0.2
+Version: 2.0.3
 Summary: Custom Widgets For PyQt5
 Home-page: https://github.com/myygunduz/pyqtCuWi
 Author: Mücahit Yusuf Yasin Gündüz
 Author-email: myygunduz@gmail.com
 License: GPL v3.0
-Download-URL: https://github.com/myygunduz/pyqtCuWi/archive/refs/tags/pyqt.tar.gz
+Download-URL: https://github.com/myygunduz/pyqtCuWi/archive/refs/tags/2.0.3.tar.gz
 Project-URL: Documentation, https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md
 Description: <h1 align=center> pyqtCuWi </h1>
         <p>
