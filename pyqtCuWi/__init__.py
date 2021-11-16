@@ -3,7 +3,7 @@
 #        https://github.com/myygunduz/pyqtCuWi       #
 
 
-__version__ = '2.0.2'
+__version__ = '2.0.3'
 
 # version 0.0.0
 from .iconbutton import iconButton 

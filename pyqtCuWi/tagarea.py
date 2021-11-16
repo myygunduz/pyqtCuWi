@@ -52,6 +52,7 @@ class tagArea(QWidget):
             self.layout.setContentsMargins(0,0,0,0)
             self._mainLayout.addWidget(self.scroolbar)
             self.scroolbar.setWidget(widget)
+
         elif self._Type == "freeBox":
             self.scroolbar = QScrollArea()
             self.scroolbar.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -78,15 +79,19 @@ class tagArea(QWidget):
                     button = customButton(tagText)
                     if self._Type == "freeBox":
                         button = customButton(tagText, parent=self.layout)
+
+                    button.clicked.connect(lambda widget: print(f'clicked the {widget}'))
+                    button.clickedCloseButton.connect(self.__widgetDelete)
                     self.layout.addWidget(button)
             else:    
                 button = customButton(tagText)
                 if self._Type == "freeBox":
                     button = customButton(tagText, parent=self.layout)
-                    button.clicked.connect(lambda widget: print(f'clicked the {widget}'))
-                    button.clickedCloseButton.connect(self.__widgetDelete)
+        
+                button.clicked.connect(lambda widget: print(f'clicked the {widget}'))
+                button.clickedCloseButton.connect(self.__widgetDelete)
                 
-                self.layout.addWidget(button)
+                self.layout.addWidget(button) 
             self._tags.append(tagText)
             self.entry.setText("")
     def __widgetDelete(self, widget):
@@ -112,9 +117,13 @@ class tagArea(QWidget):
         return self._tags
 
     def clearTags(self) -> None:
-        self._tags = []
-        self.layout.clear()
-        self.entry.setText("")
+        if self._Type == "oneLine":
+            for i in reversed(range(self.layout.count())): 
+                self.layout.itemAt(i).widget().deleteLater()
+        elif self._Type == "freeBox":
+            self._tags = []
+            self.layout.clear()
+            self.entry.setText("")
 
 
 

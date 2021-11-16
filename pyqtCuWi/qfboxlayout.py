@@ -114,7 +114,7 @@ class QFBoxLayout(QWidget):
         widget.deleteLater()
         self.__reflesh()
 
-    def clear(self, widget:QWidget) -> None:
+    def clear(self) -> None:
         #   Delete all Widgets
         for i in self._widgets:
             i.deleteLater()

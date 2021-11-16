@@ -1,36 +1,52 @@
 Metadata-Version: 2.1
 Name: pyqtCuWi
-Version: 2.0
+Version: 2.0.2
 Summary: Custom Widgets For PyQt5
 Home-page: https://github.com/myygunduz/pyqtCuWi
 Author: Mücahit Yusuf Yasin Gündüz
 Author-email: myygunduz@gmail.com
-License: UNKNOWN
-Download-URL: https://github.com/myygunduz/pyqtCuwi/archive/refs/tags/2.0.tar.gz
+License: GPL v3.0
+Download-URL: https://github.com/myygunduz/pyqtCuWi/archive/refs/tags/pyqt.tar.gz
 Project-URL: Documentation, https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md
 Description: <h1 align=center> pyqtCuWi </h1>
         <p>
           <img src="https://img.shields.io/badge/python-3.6%2B-informational?style=flat-square&logo=python">
           <img src="https://img.shields.io/badge/license-GPL%203.0-succes.svg?style=flat-square&logo=license">
-          <img src="https://img.shields.io/badge/version-2.0.0-important?style=flat-square">
+          <img src="https://img.shields.io/badge/version-2.0.2-important?style=flat-square">
+          <a href="https://pypi.org/project/pyqtCuWi/"><img src="https://img.shields.io/badge/pypi-pyqtCuWi-cyan?style=flat-square"></a>
+          <a href="https://github.com/myygunduz/pyqtCuWi/issues"><img src="https://img.shields.io/github/issues/myygunduz/pyqtCuWi?style=flat-square&color=red"></a>
+          <img src="https://img.shields.io/github/stars/myygunduz/pyqtCuWi?style=flat-square&color=yellow">
+          <img src="https://img.shields.io/github/forks/myygunduz/pyqtCuWi?style=flat-square&color=white">
         </p>
         
-        <h2> <a href="https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md">Documentation</a></h2>
-        <h2 align=center>Custom Widgets</h2>
         
+        <h2>Use PIP To Download</h2>
+        
+        ```
+        pip install pyqtCuWi
+        ```
+        OR
+        ```
+        python -m pip install pyqtCuWi
+        ```
+        
+        
+        <h2>Custom Widgets</h2>
         
         |  ID | Name | Description | Example | Output Of Example | Last Update |
         | :-: | :--: | :---------: | :-----: | :---------------: | :---------: |
-        |  1  | [Icon Button](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#iconbutton) | My first custom widget. To dynamically change the icon. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfIconButton.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/iconButton.gif?raw=true) | Aug 8, 2021 |
-        |  2  | [Rank Widget](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#rank-widget) | To sort names. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfRankWidget.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/rankWidget.gif?raw=true) | Aug 8, 2021 |
-        |  3  | [PopUp](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up) | To create a popup. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampeOfPopUp%26OuterRadius.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/popUp.gif?raw=true) | Aug 8, 2021 |
-        |  4  | [OuterRadius](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius) | Allows external radius to be added to both sides of a widget you want. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampeOfPopUp%26OuterRadius.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/outerRadius.gif?raw=true) | Aug 8, 2021 |
-        |  5  | [Loading Screen](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#loading-screen) | A loading screen that appears before the main window. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfLoadingScreen.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/loadingScreen.gif?raw=true) | Aug 30, 2021 |
-        |  6  | [QFBoxLayout](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qfboxlayout) | QFreeBoxLayout. Widget but its name is layout. To show widgets as scattered images. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfQFBoxLayout.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/QFBoxLayout.gif?raw=true) | Sep 3, 2021 |
-        |  7  | [Tag Area](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#tag-area) | A widget for tags. | [Link](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfTagArea.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/tagArea.gif?raw=true) | Sep 4, 2021 |
+        |  1  | [Icon Button](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#iconbutton) | My first custom widget. To dynamically change the icon. | [Link](https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfIconButton.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/iconButton.gif?raw=true) | Aug 8, 2021 |
+        |  2  | [Rank Widget](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#rank-widget) | To sort names. | [Link](https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfRankWidget.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/rankWidget.gif?raw=true) | Aug 8, 2021 |
+        |  3  | [PopUp](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up) | To create a popup. | [Link](https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampeOfPopUp%26OuterRadius.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/popUp.gif?raw=true) | Aug 8, 2021 |
+        |  4  | [OuterRadius](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius) | Allows external radius to be added to both sides of a widget you want. | [Link](https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampeOfPopUp%26OuterRadius.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/outerRadius.gif?raw=true) | Aug 8, 2021 |
+        |  5  | [Loading Screen](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#loading-screen) | A loading screen that appears before the main window. | [Link](https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfLoadingScreen.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/loadingScreen.gif?raw=true) | Aug 30, 2021 |
+        |  6  | [QFBoxLayout](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qfboxlayout) | QFreeBoxLayout. Widget but its name is layout. To show widgets as scattered images. | [Link](https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfQFBoxLayout.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/QFBoxLayout.gif?raw=true) | Sep 3, 2021 |
+        |  7  | [Tag Area](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#tag-area) | A widget for tags. | [Link](https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfTagArea.py) | ![Output](https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/tagArea.gif?raw=true) | Sep 4, 2021 |
         
+        <h2>License</h2>
+        <p><a href="https://github.com/myygunduz/pyqtCuWi/blob/main/LICENSE.txt">GPL v3.0</a> © Mücahit Yusuf Yasin Gündüz
         
-        <hr>
+        <h1 align=center> Share This Repository </h1>
         <table align='center'>
             <tr>
                 <td>
@@ -73,7 +89,7 @@ Description: <h1 align=center> pyqtCuWi </h1>
         </table>
         
         
-        
+Keywords: PyQt5,Custom Widgets,myygunduz
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
