@@ -1,15 +1,20 @@
 # pyqtCuWi
 <p>
-  <img src="https://img.shields.io/badge/python-3.6%2B-informational?style=flat-square&logo=python">
+  <img src="https://img.shields.io/badge/python-3.8%2B-informational?style=flat-square&logo=python">
   <img src="https://img.shields.io/badge/license-GPL%203.0-succes.svg?style=flat-square&logo=license">
-  <img src="https://img.shields.io/badge/version-2.0.0-important?style=flat-square">
+  <img src="https://img.shields.io/badge/version-2.1.0-important?style=flat-square">
 </p>
 
 ## Contents
  - [IconButton](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#iconbutton)
  - [Rank Widget](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#rank-widget)
  - [PopUp](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up)
+ - [Outer Radius](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius)
  - [Loading Screen](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#loading-screen)
+ - [QFBoxLayout](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qfboxlayout)
+ - [Tag Area](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#tag-area)
+ - [QHtmlTextEditor](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qhtmltexteditor)
+ - [QSyntaxHighlight](https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qsyntaxhighlight)
 
 ### IconButton
 My first custom widget. To dynamically change the icon. 
@@ -41,75 +46,73 @@ My first custom widget. To dynamically change the icon.
 - `hoverMouse` : Bool value returns when the mouse hovers over the button and leaves the button
 - `pressMouse` : Bool value returns when mouse button is pressed
 
-#### Example
-```py
-from PyQt5.QtWidgets import QApplication, QVBoxLayout,QWidget
-from PyQt5.QtCore import QTimer
-from pyqtCuWi import IconButton
+<details>
+  <summary>Example</summary>
 
-class main(QWidget):
-    def __init__(self):
-        super().__init__()
+    from PyQt5.QtWidgets import QApplication, QVBoxLayout,QWidget
+    from PyQt5.QtCore import QTimer
+    from pyqtCuWi import IconButton
 
-        self.setWindowTitle('IconButton')
+    class main(QWidget):
+        def __init__(self):
+            super().__init__()
 
-        self.layout = QVBoxLayout()
-        self.iconButton = IconButton(text = "IconButton",icon='assets/number-9.png',iconSize=(100,100),iconDirection='left')
-        self.iconButton.setHoverIcon('assets/number-8.png')
-        self.iconButton.setPressIcon('assets/number-7.png')
+            self.setWindowTitle('IconButton')
 
-        self.layout.addWidget(self.iconButton)
-        self.setLayout(self.layout)
+            self.layout = QVBoxLayout()
+            self.iconButton = IconButton(text = "IconButton",icon='assets/number-9.png',iconSize=(100,100),iconDirection='left')
+            self.iconButton.setHoverIcon('assets/number-8.png')
+            self.iconButton.setPressIcon('assets/number-7.png')
 
-        self.iconButton.hoverMouse.connect(self.hoverSignal)
-        self.iconButton.pressMouse.connect(self.pressSignal)
+            self.layout.addWidget(self.iconButton)
+            self.setLayout(self.layout)
 
-    def hoverSignal(self, boolValue):
-        if boolValue:
-            print("Mouse over button.")
-            self.iconButton.setIconDirection('left')
+            self.iconButton.hoverMouse.connect(self.hoverSignal)
+            self.iconButton.pressMouse.connect(self.pressSignal)
 
-        else:
-            print("Mouse left button.")
-            self.iconButton.setIconDirection('right')
+        def hoverSignal(self, boolValue):
+            if boolValue:
+                print("Mouse over button.")
+                self.iconButton.setIconDirection('left')
 
-
-    def pressSignal(self,boolValue):
-        if boolValue:
-            print("Button pressed.")
-            QTimer.singleShot(1000,self.changeIcons)
-
-    def changeIcons(self):
-            icons = self.iconButton.getIcons()
-            if '9' in icons['manualIcon']:
-                self.iconButton.setIcon('assets/number-6.png')
-                self.iconButton.setHoverIcon('assets/number-5.png')
-                self.iconButton.setPressIcon('assets/number-4.png')
-            elif '6' in icons['manualIcon']:
-                self.iconButton.setIcon('assets/number-3.png')
-                self.iconButton.setHoverIcon('assets/number-2.png')
-                self.iconButton.setPressIcon('assets/number-1.png')
-            elif '3' in icons['manualIcon']:
-                self.iconButton.setIcon('assets/number-9.png')
-                self.iconButton.setHoverIcon('assets/number-8.png')
-                self.iconButton.setPressIcon('assets/number-7.png')
+            else:
+                print("Mouse left button.")
+                self.iconButton.setIconDirection('right')
 
 
+        def pressSignal(self,boolValue):
+            if boolValue:
+                print("Button pressed.")
+                QTimer.singleShot(1000,self.changeIcons)
 
-if __name__ == '__main__':
-    app = QApplication([])
-    main = main()
-    main.show()
-    app.exec_()
-```
+        def changeIcons(self):
+                icons = self.iconButton.getIcons()
+                if '9' in icons['manualIcon']:
+                    self.iconButton.setIcon('assets/number-6.png')
+                    self.iconButton.setHoverIcon('assets/number-5.png')
+                    self.iconButton.setPressIcon('assets/number-4.png')
+                elif '6' in icons['manualIcon']:
+                    self.iconButton.setIcon('assets/number-3.png')
+                    self.iconButton.setHoverIcon('assets/number-2.png')
+                    self.iconButton.setPressIcon('assets/number-1.png')
+                elif '3' in icons['manualIcon']:
+                    self.iconButton.setIcon('assets/number-9.png')
+                    self.iconButton.setHoverIcon('assets/number-8.png')
+                    self.iconButton.setPressIcon('assets/number-7.png')
+
+
+
+    if __name__ == '__main__':
+        app = QApplication([])
+        main = main()
+        main.show()
+        app.exec_()
+</details>
+
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfIconButton.py)
 
 #### Output
 <img src= "https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/iconButton.gif" width="500">
-
-
-
-
 
 
 ### Rank Widget
@@ -140,53 +143,55 @@ StyledButton is used. [Click](https://github.com/kadir014/pyqt5-custom-widgets/b
 - `clickedButton` : Returns button information when button is clicked.
 - `deleteButton` : Returns the button's information when the button is deleted.
 
-#### Example 
-```py
-from PyQt5.QtWidgets import QLineEdit, QWidget, QVBoxLayout, QApplication, QLabel
-from pyqtCuWi import rankWidget
-import os
-class main(QWidget):
-    def __init__(self):
-        super().__init__()
+<details>
+  <summary>Example</summary>
 
-        self.setWindowTitle('Example Of Rank Widget')
-        self.layout = QVBoxLayout()
-        self.setLayout(self.layout)
+    from PyQt5.QtWidgets import QLineEdit, QWidget, QVBoxLayout, QApplication, QLabel
+    from pyqtCuWi import rankWidget
+    import os
+    class main(QWidget):
+        def __init__(self):
+            super().__init__()
 
-        self.inputWidget = QLineEdit()
-        self.inputWidget.setPlaceholderText("Enter text and press 'enter'.")
-        self.inputWidget.returnPressed.connect(lambda: self.addbutton(self.inputWidget.text()))
+            self.setWindowTitle('Example Of Rank Widget')
+            self.layout = QVBoxLayout()
+            self.setLayout(self.layout)
 
-        self.scroolBar = rankWidget(self,'V')
-        self.scroolBar.sethidebutton(False)
-        self.scroolBar.setstyledict(({
-            'background-color':(255,0,0),
-            'border-color':(0,0,0,0)
-        },'default'))
+            self.inputWidget = QLineEdit()
+            self.inputWidget.setPlaceholderText("Enter text and press 'enter'.")
+            self.inputWidget.returnPressed.connect(lambda: self.addbutton(self.inputWidget.text()))
 
-        self.scroolBar.setstylesheet((
-            "QWidget{" 
-            "background-color:rgb(0,255,0);"
-            "}",)
-        )
-        self.scroolBar.clickedButton.connect(self.isClicked)
-        self.scroolBar.deleteButton.connect(self.isDeleted)
+            self.scroolBar = rankWidget(self,'V')
+            self.scroolBar.sethidebutton(False)
+            self.scroolBar.setstyledict(({
+                'background-color':(255,0,0),
+                'border-color':(0,0,0,0)
+            },'default'))
 
-        self.layout.addWidget(self.inputWidget)
-        self.layout.addWidget(self.scroolBar)
-    def isClicked(self,widgets):
-        print(widgets)
-    
-    def isDeleted(self,widgets):
-        print(widgets)
+            self.scroolBar.setstylesheet((
+                "QWidget{" 
+                "background-color:rgb(0,255,0);"
+                "}",)
+            )
+            self.scroolBar.clickedButton.connect(self.isClicked)
+            self.scroolBar.deleteButton.connect(self.isDeleted)
+
+            self.layout.addWidget(self.inputWidget)
+            self.layout.addWidget(self.scroolBar)
+        def isClicked(self,widgets):
+            print(widgets)
         
-    def addbutton(self,text):
-        self.scroolBar.addbutton(text)
-app = QApplication([])
-main = main()
-main.show()
-app.exec_()
-```
+        def isDeleted(self,widgets):
+            print(widgets)
+            
+        def addbutton(self,text):
+            self.scroolBar.addbutton(text)
+    app = QApplication([])
+    main = main()
+    main.show()
+    app.exec_()
+</details>
+
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfRankWidget.py)
 
 #### Output
@@ -258,185 +263,189 @@ Outer Radius has no signals, but you can generate signals via outerRadius.widget
 
 
 
-#### Example 
-`Notes example is for popUp and outerRadius`
-```py
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QApplication
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QCursor
-from pyqtCuWi import popUp,outerRadius
-class main(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.widgetWidget = QWidget()
-        self.widgetWidget.setMinimumSize(400,600)
+<details>
+    <summary>Example</summary>
 
-        self.widgetWidget.setStyleSheet("background-color:#212121;")
-        self.mainLayout = QVBoxLayout()
-        self.widgetsLayout = QVBoxLayout()
-        self.widgetsLayout.setSpacing(0)
-        self.widgetsLayout.setContentsMargins(0,0,0,0)
-        self.widgetWidget.setLayout(self.widgetsLayout)
-        self.mainLayout.addWidget(self.widgetWidget,alignment=Qt.AlignCenter)
+    #Notes example is for popUp and outerRadius
 
-        self.setStyleSheet("background-color:#2b2b2b;")
-        self.setLayout(self.mainLayout)
+    from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QApplication
+    from PyQt5.QtCore import Qt
+    from PyQt5.QtGui import QCursor
+    from pyqtCuWi import popUp,outerRadius
+    class main(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.widgetWidget = QWidget()
+            self.widgetWidget.setMinimumSize(400,600)
 
-        self.widgets()
-    def widgets(self):
-        self.title = outerRadius(QLabel,'up',width=300,height=50)
-        self.title.addWidgetQss("font-size:15px; color:white; font-family: montserrat;")
-        self.title.changeDefaultQss({'radius':25})
-        self.title.widget.setAlignment(Qt.AlignCenter)
-        self.title.widget.setText('REGISTER AREA')
+            self.widgetWidget.setStyleSheet("background-color:#212121;")
+            self.mainLayout = QVBoxLayout()
+            self.widgetsLayout = QVBoxLayout()
+            self.widgetsLayout.setSpacing(0)
+            self.widgetsLayout.setContentsMargins(0,0,0,0)
+            self.widgetWidget.setLayout(self.widgetsLayout)
+            self.mainLayout.addWidget(self.widgetWidget,alignment=Qt.AlignCenter)
 
-        self.username = outerRadius(QLineEdit,'left')
-        self.username.addWidgetQss("font-size:30px; color:white; font-family: montserrat;")
-        self.username.widget.setPlaceholderText('Username')
-        self.username.widget.setText('sdsd')
+            self.setStyleSheet("background-color:#2b2b2b;")
+            self.setLayout(self.mainLayout)
 
-        self.mail = outerRadius(QLineEdit,'left')
-        self.mail.addWidgetQss("font-size:30px; color:white; font-family: montserrat;")
-        self.mail.widget.setPlaceholderText('Mail')
+            self.widgets()
+        def widgets(self):
+            self.title = outerRadius(QLabel,'up',width=300,height=50)
+            self.title.addWidgetQss("font-size:15px; color:white; font-family: montserrat;")
+            self.title.changeDefaultQss({'radius':25})
+            self.title.widget.setAlignment(Qt.AlignCenter)
+            self.title.widget.setText('REGISTER AREA')
 
-        self.password = outerRadius(QLineEdit,'right')
-        self.password.addWidgetQss("font-size:30px; color:white; font-family: montserrat;")
-        self.password.widget.setPlaceholderText('Password')
-        self.password.widget.setEchoMode(QLineEdit.Password)
+            self.username = outerRadius(QLineEdit,'left')
+            self.username.addWidgetQss("font-size:30px; color:white; font-family: montserrat;")
+            self.username.widget.setPlaceholderText('Username')
+            self.username.widget.setText('sdsd')
 
-        self.verificationPassword = outerRadius(QLineEdit,'right')
-        self.verificationPassword.addWidgetQss("font-size:30px; color:white; font-family: montserrat;")
-        self.verificationPassword.widget.setPlaceholderText('Password Again')
-        self.verificationPassword.widget.setEchoMode(QLineEdit.Password)
+            self.mail = outerRadius(QLineEdit,'left')
+            self.mail.addWidgetQss("font-size:30px; color:white; font-family: montserrat;")
+            self.mail.widget.setPlaceholderText('Mail')
 
-        self.registerButton = outerRadius(QPushButton,'down',width=300,height=50)
-        self.registerButton.addWidgetQss("font-size:20px; color:white; font-family: montserrat;",'default')
-        self.registerButton.addWidgetQss("background-color:white;font-size:20px; color:black; font-family: montserrat;",'hover')
-        self.registerButton.addWidgetQss("background-color:gray;font-size:20px; color:white; font-family: montserrat;",'press')
-        self.registerButton.widget.setCursor(QCursor(Qt.PointingHandCursor))
-        self.registerButton.widget.setText('register')
-        self.registerButton.widget.clicked.connect(self.clickButton)
+            self.password = outerRadius(QLineEdit,'right')
+            self.password.addWidgetQss("font-size:30px; color:white; font-family: montserrat;")
+            self.password.widget.setPlaceholderText('Password')
+            self.password.widget.setEchoMode(QLineEdit.Password)
 
-        self.widgetsLayout.addWidget(self.title,alignment=Qt.AlignCenter)
-        self.widgetsLayout.addWidget(self.username,alignment=Qt.AlignLeft)
-        self.widgetsLayout.addSpacing(60)
-        self.widgetsLayout.addWidget(self.mail,alignment=Qt.AlignLeft)
-        self.widgetsLayout.addSpacing(60)
-        self.widgetsLayout.addWidget(self.password,alignment=Qt.AlignRight)
-        self.widgetsLayout.addSpacing(60)
-        self.widgetsLayout.addWidget(self.verificationPassword,alignment=Qt.AlignRight)
-        self.widgetsLayout.addSpacing(40)
-        self.widgetsLayout.addWidget(self.registerButton,alignment=Qt.AlignCenter)
+            self.verificationPassword = outerRadius(QLineEdit,'right')
+            self.verificationPassword.addWidgetQss("font-size:30px; color:white; font-family: montserrat;")
+            self.verificationPassword.widget.setPlaceholderText('Password Again')
+            self.verificationPassword.widget.setEchoMode(QLineEdit.Password)
 
-    def clickButton(self):
-        self.documentation = popUp(self,'popUp Documents','assets/documentation.jpg','dark')
-        self.documentation.show()
-        contentOne = {
-            "parent link(object)" : "Sets the main widget. (No default)",
-            "title (str)" : "Sets the title of PopUp. (Default : None)",
-            "img (str)" : "Picture settings to be displayed on the widget. (Default : None)",
-            "themeType ['dark', 'light' or 'custom'] (str)" : "Sets the theme type. (Default : 'dark')"
-        }
+            self.registerButton = outerRadius(QPushButton,'down',width=300,height=50)
+            self.registerButton.addWidgetQss("font-size:20px; color:white; font-family: montserrat;",'default')
+            self.registerButton.addWidgetQss("background-color:white;font-size:20px; color:black; font-family: montserrat;",'hover')
+            self.registerButton.addWidgetQss("background-color:gray;font-size:20px; color:white; font-family: montserrat;",'press')
+            self.registerButton.widget.setCursor(QCursor(Qt.PointingHandCursor))
+            self.registerButton.widget.setText('register')
+            self.registerButton.widget.clicked.connect(self.clickButton)
+
+            self.widgetsLayout.addWidget(self.title,alignment=Qt.AlignCenter)
+            self.widgetsLayout.addWidget(self.username,alignment=Qt.AlignLeft)
+            self.widgetsLayout.addSpacing(60)
+            self.widgetsLayout.addWidget(self.mail,alignment=Qt.AlignLeft)
+            self.widgetsLayout.addSpacing(60)
+            self.widgetsLayout.addWidget(self.password,alignment=Qt.AlignRight)
+            self.widgetsLayout.addSpacing(60)
+            self.widgetsLayout.addWidget(self.verificationPassword,alignment=Qt.AlignRight)
+            self.widgetsLayout.addSpacing(40)
+            self.widgetsLayout.addWidget(self.registerButton,alignment=Qt.AlignCenter)
+
+        def clickButton(self):
+            self.documentation = popUp(self,'popUp Documents','assets/documentation.jpg','dark')
+            self.documentation.show()
+            contentOne = {
+                "parent link(object)" : "Sets the main widget. (No default)",
+                "title (str)" : "Sets the title of PopUp. (Default : None)",
+                "img (str)" : "Picture settings to be displayed on the widget. (Default : None)",
+                "themeType ['dark', 'light' or 'custom'] (str)" : "Sets the theme type. (Default : 'dark')"
+            }
+            
+            contentTwo = {
+                "getInfos()" : "Returns all information about the PopUp."
+            }
+            contentThree = {
+                "setWidht(width) (int)" : "Sets the width of PopUp.",
+                "setHeight(height) (int)" : "Sets the height of PopUp.",
+                "setThemeType(themeType) ['dark', 'light' or 'custom'] (str)" : "Sets the theme type.",
+                "setTitleText(title) (str)" : "Sets the title of PopUp.",
+                "setSubTitle(subTitle) (str)": "Sets the sub title of PopUp.",
+                "setCustomQss(styleDict) (dict)" : "Sets the custom qss code.",
+                "setImage(filePath) (str)" : "Sets the file path of the image."
+            }
+            contentFour = {
+                "addCustomContentTitleType(titleType) (tuple)" : "Adds content header type.",
+                "addContent(title, content, titleType) (str, tuple, str)" : "Adds content.",
+                "themeUpdate()" : "Updates theme.",
+                "subLayout.addWidget()" : "Adds widget to subLayout.",
+                "closeWidget()" : "Closes the widget."
+            }
+
+            contentFive = {
+                "closed" : "Returns bool when PopUp is closed.",
+                "clickedContent" : "Returns content information when content is clicked."
+            }
+            contentSix = {
+                "":"ImageBox is used. <a href='https://github.com/kadir014/pyqt5-custom-widgets/blob/main/documentation.md#ImageBox' style = 'color:white;'>Click</a> for detailed information."
+            }
+            self.documentation.addContent('Parameters',contentOne)
+            self.documentation.addContent('Get Methods',contentTwo)
+            self.documentation.addContent('Set Methods',contentThree)
+            self.documentation.addContent('Other Methods',contentFour)
+            self.documentation.addContent('Signals',contentFive)
+            self.documentation.addContent('Notes',contentSix,titleType='warning')
+            
+
+            button = QPushButton('Finished')
+
+            button.setStyleSheet('QPushButton{'
+                                'border:4px solid red;'
+                                'color:red;'
+                                'background-color:rgba(0,0,0,0);'
+                                'font: 20px Times;}'
+                                'QPushButton:hover{'
+                                'border:4px solid rgba(0,0,0,0);'
+                                'color:#212121;'
+                                'background-color:red;'
+                                'font: 20px Times;}'
+                                'QPushButton:pressed{'
+                                'border:4px solid rgba(0,0,0,10);'
+                                'color:#212121;'
+                                'background-color:rgba(255,0,0,80);'
+                                'font: 20px Times;}')
+
+            button.setFixedSize(100,50)
+            button.clicked.connect(self.clicked)
+
+            self.documentation.subLayout.addSpacing(500)
+            self.documentation.subLayout.addWidget(button)
+            self.documentation.subLayout.addSpacing(20)
         
-        contentTwo = {
-            "getInfos()" : "Returns all information about the PopUp."
-        }
-        contentThree = {
-            "setWidht(width) (int)" : "Sets the width of PopUp.",
-            "setHeight(height) (int)" : "Sets the height of PopUp.",
-            "setThemeType(themeType) ['dark', 'light' or 'custom'] (str)" : "Sets the theme type.",
-            "setTitleText(title) (str)" : "Sets the title of PopUp.",
-            "setSubTitle(subTitle) (str)": "Sets the sub title of PopUp.",
-            "setCustomQss(styleDict) (dict)" : "Sets the custom qss code.",
-            "setImage(filePath) (str)" : "Sets the file path of the image."
-        }
-        contentFour = {
-            "addCustomContentTitleType(titleType) (tuple)" : "Adds content header type.",
-            "addContent(title, content, titleType) (str, tuple, str)" : "Adds content.",
-            "themeUpdate()" : "Updates theme.",
-            "subLayout.addWidget()" : "Adds widget to subLayout.",
-            "closeWidget()" : "Closes the widget."
-        }
+        def clicked(self):
+            self.documentation.closeWidget()
+            self.widgetWidget.hide()
+            
+            label = QLabel("Operation Successfully Completed")
+            label.setStyleSheet('QLabel{'
+                            'color:white;'
+                            'font:50px Times;}')
+            label.setAlignment(Qt.AlignCenter)
+            label.setFixedSize(self.width(),self.height())
 
-        contentFive = {
-            "closed" : "Returns bool when PopUp is closed.",
-            "clickedContent" : "Returns content information when content is clicked."
-        }
-        contentSix = {
-            "":"ImageBox is used. <a href='https://github.com/kadir014/pyqt5-custom-widgets/blob/main/documentation.md#ImageBox' style = 'color:white;'>Click</a> for detailed information."
-        }
-        self.documentation.addContent('Parameters',contentOne)
-        self.documentation.addContent('Get Methods',contentTwo)
-        self.documentation.addContent('Set Methods',contentThree)
-        self.documentation.addContent('Other Methods',contentFour)
-        self.documentation.addContent('Signals',contentFive)
-        self.documentation.addContent('Notes',contentSix,titleType='warning')
-        
+            closeButton = QPushButton('CLOSE')
+            closeButton.setStyleSheet('QPushButton{'
+                                'border:4px solid red;'
+                                'color:red;'
+                                'background-color:rgba(0,0,0,0);'
+                                'font: 30px Times;}'
+                                'QPushButton:hover{'
+                                'border:4px solid rgba(0,0,0,0);'
+                                'color:#212121;'
+                                'background-color:red;'
+                                'font: 30px Times;}'
+                                'QPushButton:pressed{'
+                                'border:4px solid rgba(0,0,0,10);'
+                                'color:#212121;'
+                                'background-color:rgba(255,0,0,80);'
+                                'font: 30px Times;}')
+            closeButton.setFixedWidth(300)
+            closeButton.clicked.connect(lambda: self.deleteLater())
+            self.mainLayout.addWidget(label)
+            self.mainLayout.addWidget(closeButton,alignment=Qt.AlignCenter)
+            self.mainLayout.addSpacing(50)
 
-        button = QPushButton('Finished')
+    if __name__ == '__main__':
+        app = QApplication([])
+        main = main()
+        main.show()
+        app.exec_() 
+</details>
 
-        button.setStyleSheet('QPushButton{'
-                            'border:4px solid red;'
-                            'color:red;'
-                            'background-color:rgba(0,0,0,0);'
-                            'font: 20px Times;}'
-                            'QPushButton:hover{'
-                            'border:4px solid rgba(0,0,0,0);'
-                            'color:#212121;'
-                            'background-color:red;'
-                            'font: 20px Times;}'
-                            'QPushButton:pressed{'
-                            'border:4px solid rgba(0,0,0,10);'
-                            'color:#212121;'
-                            'background-color:rgba(255,0,0,80);'
-                            'font: 20px Times;}')
 
-        button.setFixedSize(100,50)
-        button.clicked.connect(self.clicked)
-
-        self.documentation.subLayout.addSpacing(500)
-        self.documentation.subLayout.addWidget(button)
-        self.documentation.subLayout.addSpacing(20)
-    
-    def clicked(self):
-        self.documentation.closeWidget()
-        self.widgetWidget.hide()
-        
-        label = QLabel("Operation Successfully Completed")
-        label.setStyleSheet('QLabel{'
-                        'color:white;'
-                        'font:50px Times;}')
-        label.setAlignment(Qt.AlignCenter)
-        label.setFixedSize(self.width(),self.height())
-
-        closeButton = QPushButton('CLOSE')
-        closeButton.setStyleSheet('QPushButton{'
-                            'border:4px solid red;'
-                            'color:red;'
-                            'background-color:rgba(0,0,0,0);'
-                            'font: 30px Times;}'
-                            'QPushButton:hover{'
-                            'border:4px solid rgba(0,0,0,0);'
-                            'color:#212121;'
-                            'background-color:red;'
-                            'font: 30px Times;}'
-                            'QPushButton:pressed{'
-                            'border:4px solid rgba(0,0,0,10);'
-                            'color:#212121;'
-                            'background-color:rgba(255,0,0,80);'
-                            'font: 30px Times;}')
-        closeButton.setFixedWidth(300)
-        closeButton.clicked.connect(lambda: self.deleteLater())
-        self.mainLayout.addWidget(label)
-        self.mainLayout.addWidget(closeButton,alignment=Qt.AlignCenter)
-        self.mainLayout.addSpacing(50)
-
-if __name__ == '__main__':
-    app = QApplication([])
-    main = main()
-    main.show()
-    app.exec_() 
-```
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampeOfPopUp%26OuterRadius.py)
 
 #### Output:
@@ -463,76 +472,78 @@ A loading screen that appears before the main window.
 
 - `finished` : It works when the program is finished.
 
-#### Example 
-```py
-from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QLabel, QPushButton
-from PyQt5.QtCore import Qt
-from pyqtCuWi import loadingScreen
+<details>
+  <summary>Example</summary>
 
-class main(QWidget):
-    def __init__(self):
-        super().__init__()
+    from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QLabel, QPushButton
+    from PyQt5.QtCore import Qt
+    from pyqtCuWi import loadingScreen
 
-        self.setFixedSize(640,480)
-        self.mainLayout = QVBoxLayout()
-        self.setLayout(self.mainLayout)
+    class main(QWidget):
+        def __init__(self):
+            super().__init__()
 
-        self.setStyleSheet("background-color:#212121;")
+            self.setFixedSize(640,480)
+            self.mainLayout = QVBoxLayout()
+            self.setLayout(self.mainLayout)
 
-        self.text = QLabel("Operation Successfully Completed")
-        self.text.setStyleSheet('QLabel{'
-                        'color:white;'
-                        'font:40px Times;}')
-        self.text.setAlignment(Qt.AlignCenter)
-        self.text.setFixedSize(self.width(),self.height())
+            self.setStyleSheet("background-color:#212121;")
 
-        self.finishButton = QPushButton("Finished")
-        self.finishButton.setStyleSheet('QPushButton{'
-                            'border:4px solid red;'
-                            'color:red;'
-                            'background-color:rgba(0,0,0,0);'
-                            'font: 30px Times;}'
-                            'QPushButton:hover{'
-                            'border:4px solid rgba(0,0,0,0);'
-                            'color:#212121;'
-                            'background-color:red;'
-                            'font: 30px Times;}'
-                            'QPushButton:pressed{'
-                            'border:4px solid rgba(0,0,0,10);'
-                            'color:#212121;'
-                            'background-color:rgba(255,0,0,80);'
-                            'font: 30px Times;}')
-        self.finishButton.setFixedWidth(300)
-        self.finishButton.clicked.connect(lambda: self.deleteLater())
+            self.text = QLabel("Operation Successfully Completed")
+            self.text.setStyleSheet('QLabel{'
+                            'color:white;'
+                            'font:40px Times;}')
+            self.text.setAlignment(Qt.AlignCenter)
+            self.text.setFixedSize(self.width(),self.height())
 
-        self.mainLayout.addWidget(self.text,alignment=Qt.AlignCenter)
-        self.mainLayout.addWidget(self.finishButton,alignment=Qt.AlignCenter)
+            self.finishButton = QPushButton("Finished")
+            self.finishButton.setStyleSheet('QPushButton{'
+                                'border:4px solid red;'
+                                'color:red;'
+                                'background-color:rgba(0,0,0,0);'
+                                'font: 30px Times;}'
+                                'QPushButton:hover{'
+                                'border:4px solid rgba(0,0,0,0);'
+                                'color:#212121;'
+                                'background-color:red;'
+                                'font: 30px Times;}'
+                                'QPushButton:pressed{'
+                                'border:4px solid rgba(0,0,0,10);'
+                                'color:#212121;'
+                                'background-color:rgba(255,0,0,80);'
+                                'font: 30px Times;}')
+            self.finishButton.setFixedWidth(300)
+            self.finishButton.clicked.connect(lambda: self.deleteLater())
 
-def finishedFunction():
-    main.show()
-    loadingWindow.deleteLater()
-if __name__ == '__main__':
-    app=QApplication([])
-    main = main()
-    loadingWindow=loadingScreen("Program",100)
+            self.mainLayout.addWidget(self.text,alignment=Qt.AlignCenter)
+            self.mainLayout.addWidget(self.finishButton,alignment=Qt.AlignCenter)
 
-    loadingText =["Is this Windows?",
-                "Adjusting flux capacitor...",
-                "Please wait until the sloth starts moving.",
-                "Don't break your screen yet!",
-                "I swear it's almost done.",
-                "Let's take a mindfulness minute...",
-                "Unicorns are at the end of this road, I promise.",
-                "Listening for the sound of one hand clapping...",
-                "Keeping all the 1's and removing all the 0's...",
-                "Putting the icing on the cake. The cake is not a lie...",
-                "Cleaning off the cobwebs..."]
-    #For more message: https://gist.github.com/meain/6440b706a97d2dd71574769517e7ed32
-    loadingWindow.addSubTitle(loadingText)
-    loadingWindow.finished.connect(finishedFunction)
-    loadingWindow.show()
-    app.exec_()
-```
+    def finishedFunction():
+        main.show()
+        loadingWindow.deleteLater()
+    if __name__ == '__main__':
+        app=QApplication([])
+        main = main()
+        loadingWindow=loadingScreen("Program",100)
+
+        loadingText =["Is this Windows?",
+                    "Adjusting flux capacitor...",
+                    "Please wait until the sloth starts moving.",
+                    "Don't break your screen yet!",
+                    "I swear it's almost done.",
+                    "Let's take a mindfulness minute...",
+                    "Unicorns are at the end of this road, I promise.",
+                    "Listening for the sound of one hand clapping...",
+                    "Keeping all the 1's and removing all the 0's...",
+                    "Putting the icing on the cake. The cake is not a lie...",
+                    "Cleaning off the cobwebs..."]
+        #For more message: https://gist.github.com/meain/6440b706a97d2dd71574769517e7ed32
+        loadingWindow.addSubTitle(loadingText)
+        loadingWindow.finished.connect(finishedFunction)
+        loadingWindow.show()
+        app.exec_()
+</details>
+
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfLoadingScreen.py)
 
 #### Output:
@@ -548,165 +559,167 @@ QFreeBoxLayout. Widget but its name is layout. To show widgets as scattered imag
 - `setSpacing(value)` (int) : Sets the value of spacing.
 - `setAlignment(QT.Corner) [TopLeftCorner, TopRightCorner, BottomLeftCorner, BottomRightCorner]` : Sets the type of alignment.
 
-#### Example
-```py
-from PyQt5.QtWidgets import QApplication,QWidget, QVBoxLayout, QLineEdit, QScrollArea, QHBoxLayout, QPushButton
-from PyQt5.QtCore import  Qt, pyqtSignal
-from PyQt5.QtGui import QCursor
-from pyqtCuWi import QFBoxLayout
+<details>
+  <summary>Example</summary>
 
-def clearOfList(InputList:list) -> list :
-    Output = []
-    def operation(lista:list):
-        for i in lista:
-            if isinstance(i,list):
-                operation(i)
-            else:
-                Output.append(i)
-    operation(InputList)
-    return Output
+    from PyQt5.QtWidgets import QApplication,QWidget, QVBoxLayout, QLineEdit, QScrollArea, QHBoxLayout, QPushButton
+    from PyQt5.QtCore import  Qt, pyqtSignal
+    from PyQt5.QtGui import QCursor
+    from pyqtCuWi import QFBoxLayout
 
-class main(QWidget):
-    def __init__(self):
-        super().__init__()
+    def clearOfList(InputList:list) -> list :
+        Output = []
+        def operation(lista:list):
+            for i in lista:
+                if isinstance(i,list):
+                    operation(i)
+                else:
+                    Output.append(i)
+        operation(InputList)
+        return Output
 
-        self._mainLayout = QVBoxLayout()
-        self._mainLayout.setContentsMargins(0,0,0,0)    
-        self._mainLayout.setSpacing(0)    
-        self.setLayout(self._mainLayout)
+    class main(QWidget):
+        def __init__(self):
+            super().__init__()
 
-        self.entry = QLineEdit()
-        self.entry.returnPressed.connect(self.__add)
-        self.entry.setPlaceholderText("Entry the tag name.")
-        self._mainLayout.addWidget(self.entry)
+            self._mainLayout = QVBoxLayout()
+            self._mainLayout.setContentsMargins(0,0,0,0)    
+            self._mainLayout.setSpacing(0)    
+            self.setLayout(self._mainLayout)
 
-        self.__showTags()
+            self.entry = QLineEdit()
+            self.entry.returnPressed.connect(self.__add)
+            self.entry.setPlaceholderText("Entry the tag name.")
+            self._mainLayout.addWidget(self.entry)
 
-    def __showTags(self):
-        self.scroolbar = QScrollArea()
-        self.scroolbar.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.scroolbar.setContentsMargins(0,0,0,0)
-        self.scroolbar.setWidgetResizable(True)
+            self.__showTags()
 
-        self.layout = QFBoxLayout()
-        self.layout.setAlignment(Qt.TopLeftCorner)
-        self.layout.setContentsMargins(0,0,0,0)
-        self._mainLayout.addWidget(self.scroolbar)
-        self.scroolbar.setWidget(self.layout)
+        def __showTags(self):
+            self.scroolbar = QScrollArea()
+            self.scroolbar.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+            self.scroolbar.setContentsMargins(0,0,0,0)
+            self.scroolbar.setWidgetResizable(True)
 
-    def __add(self):
+            self.layout = QFBoxLayout()
+            self.layout.setAlignment(Qt.TopLeftCorner)
+            self.layout.setContentsMargins(0,0,0,0)
+            self._mainLayout.addWidget(self.scroolbar)
+            self.scroolbar.setWidget(self.layout)
 
-        button = customButton(self.entry.text().strip(), parent=self.layout)
+        def __add(self):
 
-        button.clicked.connect(lambda widget: print(f'clicked the {widget}'))
-        button.clickedCloseButton.connect(lambda widget:self.layout.deleteWidget(widget))
-        
-        self.layout.addWidget(button)
+            button = customButton(self.entry.text().strip(), parent=self.layout)
 
-class customButton(QWidget):
-    clickedCloseButton = pyqtSignal(object)
-    clicked = pyqtSignal(object)
-    def __init__(self, text, parent = None):
-        QWidget.__init__(self, parent=parent)
-        self.setMinimumWidth(60)
-        self._text = text
-        self._layout = QHBoxLayout()
-        self._layout.setSpacing(0)
-        self._layout.setContentsMargins(0,0,0,0)
-        self.setLayout(self._layout)
+            button.clicked.connect(lambda widget: print(f'clicked the {widget}'))
+            button.clickedCloseButton.connect(lambda widget:self.layout.deleteWidget(widget))
+            
+            self.layout.addWidget(button)
 
-        self.text = QPushButton("    "+self._text)
-        self.text.setCursor(QCursor(Qt.PointingHandCursor))
-        self.text.setObjectName("text")
-        self.text.setFixedHeight(30)
-        self.text.clicked.connect(self.__clickedButton)
+    class customButton(QWidget):
+        clickedCloseButton = pyqtSignal(object)
+        clicked = pyqtSignal(object)
+        def __init__(self, text, parent = None):
+            QWidget.__init__(self, parent=parent)
+            self.setMinimumWidth(60)
+            self._text = text
+            self._layout = QHBoxLayout()
+            self._layout.setSpacing(0)
+            self._layout.setContentsMargins(0,0,0,0)
+            self.setLayout(self._layout)
 
-        self._layout.addWidget(self.text)
+            self.text = QPushButton("    "+self._text)
+            self.text.setCursor(QCursor(Qt.PointingHandCursor))
+            self.text.setObjectName("text")
+            self.text.setFixedHeight(30)
+            self.text.clicked.connect(self.__clickedButton)
 
-        self.closeButton = QPushButton("✕")
-        self.closeButton.setCursor(QCursor(Qt.PointingHandCursor))
-        self.closeButton.setObjectName("closeButton")
-        self.closeButton.clicked.connect(lambda: self.__clickedButton(isCloseButton=True))
-        self.closeButton.setFixedSize(40,30)
+            self._layout.addWidget(self.text)
 
-        self._layout.addWidget(self.closeButton)
-        self.__qss()
-    def __clickedButton(self, isCloseButton = False):
-        self.clicked.emit(self)
-        if isCloseButton:
-            self.clickedCloseButton.emit(self)
+            self.closeButton = QPushButton("✕")
+            self.closeButton.setCursor(QCursor(Qt.PointingHandCursor))
+            self.closeButton.setObjectName("closeButton")
+            self.closeButton.clicked.connect(lambda: self.__clickedButton(isCloseButton=True))
+            self.closeButton.setFixedSize(40,30)
 
-    def enterEvent(self, event):
-        self.setStyleSheet("""
-        QWidget{
-            background-color: rgb(255, 56, 122);
-            border: 3px solid rgb(186, 13, 71);
-            color: rgb(251, 249, 250);
-        }
-        QPushButton#text{
-            border-top-left-radius:15px;
-            border-bottom-left-radius:15px;
-            border-right:0px;
-        }
-        QPushButton#closeButton{
-            border-top-right-radius:15px;
-            border-bottom-right-radius:15px;
-            border-left:0px;
-        }
-        """)
+            self._layout.addWidget(self.closeButton)
+            self.__qss()
+        def __clickedButton(self, isCloseButton = False):
+            self.clicked.emit(self)
+            if isCloseButton:
+                self.clickedCloseButton.emit(self)
 
-    def leaveEvent(self, event):
-        self.setStyleSheet("""
-        QPushButton{
-            background-color: rgb(253, 0, 84);
-            border: 3px solid rgb(168, 0, 56);
-            color: rgb(251, 249, 250);
-        }
-        QPushButton#text{
-            border-top-left-radius:15px;
-            border-bottom-left-radius:15px;
-            border-right:0px;
-        }
-        QPushButton#closeButton{
-            border-top-right-radius:15px;
-            border-bottom-right-radius:15px;
-            border-left:0px;
-        }
+        def enterEvent(self, event):
+            self.setStyleSheet("""
+            QWidget{
+                background-color: rgb(255, 56, 122);
+                border: 3px solid rgb(186, 13, 71);
+                color: rgb(251, 249, 250);
+            }
+            QPushButton#text{
+                border-top-left-radius:15px;
+                border-bottom-left-radius:15px;
+                border-right:0px;
+            }
+            QPushButton#closeButton{
+                border-top-right-radius:15px;
+                border-bottom-right-radius:15px;
+                border-left:0px;
+            }
+            """)
 
-        """)
-    def __qss(self):
-        self.setStyleSheet("""
-        QPushButton{
-            background-color: rgb(253, 0, 84);
-            border: 3px solid rgb(168, 0, 56);
-            color: rgb(251, 249, 250);
-        }
-        QPushButton:hover{
-            background-color: rgb(255, 56, 122);
-        }
-        QPushButton#text{
-            border-top-left-radius:15px;
-            border-bottom-left-radius:15px;
-            border-right:0px;
-        }
-        QPushButton#closeButton{
-            border-top-right-radius:15px;
-            border-bottom-right-radius:15px;
-            border-left:0px;
-        }
+        def leaveEvent(self, event):
+            self.setStyleSheet("""
+            QPushButton{
+                background-color: rgb(253, 0, 84);
+                border: 3px solid rgb(168, 0, 56);
+                color: rgb(251, 249, 250);
+            }
+            QPushButton#text{
+                border-top-left-radius:15px;
+                border-bottom-left-radius:15px;
+                border-right:0px;
+            }
+            QPushButton#closeButton{
+                border-top-right-radius:15px;
+                border-bottom-right-radius:15px;
+                border-left:0px;
+            }
 
-        """)
+            """)
+        def __qss(self):
+            self.setStyleSheet("""
+            QPushButton{
+                background-color: rgb(253, 0, 84);
+                border: 3px solid rgb(168, 0, 56);
+                color: rgb(251, 249, 250);
+            }
+            QPushButton:hover{
+                background-color: rgb(255, 56, 122);
+            }
+            QPushButton#text{
+                border-top-left-radius:15px;
+                border-bottom-left-radius:15px;
+                border-right:0px;
+            }
+            QPushButton#closeButton{
+                border-top-right-radius:15px;
+                border-bottom-right-radius:15px;
+                border-left:0px;
+            }
 
-if __name__ == '__main__':
-    app = QApplication([])
-    main = main()
-    main.show()
-    app.exec_()
-```
+            """)
+
+    if __name__ == '__main__':
+        app = QApplication([])
+        main = main()
+        main.show()
+        app.exec_()
+</details>
+
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfQFBoxLayout.py)
 
 #### Output:
-<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/QFBoxLayout.gif">
+<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/qfboxlayout.gif">
 
 ### Tag Area
 A widget for tags.
@@ -724,102 +737,179 @@ A widget for tags.
  - `getTags()` : Returns all entered tags.
  - `clearTags()` : Clears all tags.
 
-#### Example
-```py
-from PyQt5.QtWidgets import QWidget, QApplication, QVBoxLayout, QLabel, QTextEdit, QLineEdit, QPushButton
+<details>
+    <summary>Example</summary>
 
-from pyqtCuWi import  tagArea
+    from PyQt5.QtWidgets import QWidget, QApplication, QVBoxLayout, QLabel, QTextEdit, QLineEdit, QPushButton
 
-class main(QWidget):
-    def __init__(self):
-        super().__init__()
+    from pyqtCuWi import  tagArea
 
-        self.mainLayout = QVBoxLayout()
-        self.setLayout(self.mainLayout)
-        
-        self.title = QLabel("Create Post")
-        self.mainLayout.addWidget(self.title)
+    class main(QWidget):
+        def __init__(self):
+            super().__init__()
 
-        self.entryTitle = QLineEdit()
-        self.entryTitle.setPlaceholderText("Title")
-        self.mainLayout.addWidget(self.entryTitle)
-
-        self.entryContent = QTextEdit()
-        self.entryContent.setPlaceholderText("Entry content")
-        self.mainLayout.addWidget(self.entryContent)
-
-        self.entryTag = tagArea("freeBox")
-        self.entryTag.setTagLimit(3)
-        self.mainLayout.addWidget(self.entryTag)
-
-        self.share = QPushButton("Share")
-        self.share.clicked.connect(self.printPost)
-        self.share.setObjectName("share")
-        self.mainLayout.addWidget(self.share)
-        self.__qss()
-    def __qss(self):
-        self.setStyleSheet("""
-        QWidget{
-            background-color:rgb(251, 249, 250);
-        }
-        QLabel{
-            font: 30px Montserrat Black;
-            color:rgb(253, 0, 84);
+            self.mainLayout = QVBoxLayout()
+            self.setLayout(self.mainLayout)
             
-        }
-        QLineEdit{
-            font-family: Montserrat ;
-            color:rgb(253, 0, 84);
-            selection-background-color:rgb(253, 0, 84);
-            selection-color:rgb(251, 249, 250);
-        }
-        QTextEdit{
-            color:rgb(253, 0, 84);
-            font-family: Montserrat;
-            selection-background-color:rgb(253, 0, 84);
-            selection-color:rgb(251, 249, 250);
-        }
-        QPushButton{
-            font-family: Montserrat Black;
-            color:#F9F9F9;
-        }
-        QPushButton#share{
-            font: 20px Montserrat Black;
-            background-color:rgb(253, 0, 84);
-            color:rgb(251, 249, 250);
-        }
-        QPushButton#share:pressed{
-            font: 20px Montserrat Black;
-            background-color:rgb(251, 249, 250);
-            color:rgb(253, 0, 84);
-        }
-        """)
+            self.title = QLabel("Create Post")
+            self.mainLayout.addWidget(self.title)
 
-    def printPost(self):
-        tags = ""
-        for i in self.entryTag.getTags():
-            tags += ' '+i if i.startswith("#") else f' #{i}'
-        text = (f"""
-        ====================   POST   ====================        
+            self.entryTitle = QLineEdit()
+            self.entryTitle.setPlaceholderText("Title")
+            self.mainLayout.addWidget(self.entryTitle)
 
-        {self.entryTitle.text().strip().upper() if self.entryTitle.text().strip() != "" else "Title Empty"}:
-            {self.entryContent.toPlainText().strip().capitalize() if self.entryContent.toPlainText().strip() != "" else "Post Empty"}
+            self.entryContent = QTextEdit()
+            self.entryContent.setPlaceholderText("Entry content")
+            self.mainLayout.addWidget(self.entryContent)
 
-        Tags:
-            {tags if tags != "" else "Tags Empty"}
+            self.entryTag = tagArea("freeBox")
+            self.entryTag.setTagLimit(3)
+            self.mainLayout.addWidget(self.entryTag)
 
-                                            Created by myygunduz.
-                """)
+            self.share = QPushButton("Share")
+            self.share.clicked.connect(self.printPost)
+            self.share.setObjectName("share")
+            self.mainLayout.addWidget(self.share)
+            self.__qss()
+        def __qss(self):
+            self.setStyleSheet("""
+            QWidget{
+                background-color:rgb(251, 249, 250);
+            }
+            QLabel{
+                font: 30px Montserrat Black;
+                color:rgb(253, 0, 84);
+                
+            }
+            QLineEdit{
+                font-family: Montserrat ;
+                color:rgb(253, 0, 84);
+                selection-background-color:rgb(253, 0, 84);
+                selection-color:rgb(251, 249, 250);
+            }
+            QTextEdit{
+                color:rgb(253, 0, 84);
+                font-family: Montserrat;
+                selection-background-color:rgb(253, 0, 84);
+                selection-color:rgb(251, 249, 250);
+            }
+            QPushButton{
+                font-family: Montserrat Black;
+                color:#F9F9F9;
+            }
+            QPushButton#share{
+                font: 20px Montserrat Black;
+                background-color:rgb(253, 0, 84);
+                color:rgb(251, 249, 250);
+            }
+            QPushButton#share:pressed{
+                font: 20px Montserrat Black;
+                background-color:rgb(251, 249, 250);
+                color:rgb(253, 0, 84);
+            }
+            """)
 
-        print(text)
+        def printPost(self):
+            tags = ""
+            for i in self.entryTag.getTags():
+                tags += ' '+i if i.startswith("#") else f' #{i}'
+            text = (f"""
+            ====================   POST   ====================        
 
-if __name__ == '__main__':
-    app = QApplication([])
-    main = main()
-    main.show()
-    app.exec_()
-```
+            {self.entryTitle.text().strip().upper() if self.entryTitle.text().strip() != "" else "Title Empty"}:
+                {self.entryContent.toPlainText().strip().capitalize() if self.entryContent.toPlainText().strip() != "" else "Post Empty"}
+
+            Tags:
+                {tags if tags != "" else "Tags Empty"}
+
+                                                Created by myygunduz.
+                    """)
+
+            print(text)
+
+    if __name__ == '__main__':
+        app = QApplication([])
+        main = main()
+        main.show()
+        app.exec_()
+</details>
+
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfTagArea.py)
 
 #### Output:
 <img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/tagArea.gif">
+
+### QHtmlTextEditor
+The task of this widget is to convert your text to html code.
+
+#### Parameters
+
+- `parent` (QObject) : Define parent to change window title. (optional)
+
+#### Methods
+
+ - `getAllActionButton()` -> list : Returns all visible QActions.
+ - `getSourceCode()` -> str : Returns source code.
+ - `getFileName()` -> str : Returns file name.
+ - `changeStatusChangeTitle(status)` (bool) -> None : Sets the permission for change window title.
+ - `setDefaultStyle(style type)` (pyqtCuWi.pyqtCuWiColor.QTheme) -> None : Sets the widget style using preset styles.
+
+#### Signals
+
+- `file_saved`  : Filename returns when changes are saved to a file.
+- `file_opened` : Filename returns when open a file.
+
+<details>
+    <summary>Example</summary>
+
+    from PyQt5.QtWidgets import QApplication
+    from pyqtCuWi import QHtmlTextEditor
+
+    app = QApplication([])
+    win = QHtmlTextEditor()
+    win.setWindowTitle('PyQt5 Text Editor')
+    win.show()
+    app.exec_()
+</details>
+
+[File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfQHtmlTextEditor.py)
+
+#### Output
+<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/qhtmltexteditor.gif">
+
+### QSyntaxHighlight
+The task of this widget is highlighting your code.
+
+#### Parameters
+
+- `parent` (QObject) : Define parent to change window title. (optional)
+
+#### Methods
+
+ - `changeStatusChangeTitle(status)` (bool) -> None : Sets the permission for change window title.
+ - `setDefaultStyle(style type)` (pyqtCuWi.pyqtCuWiColor.QTheme) -> None : Sets the widget style using preset styles.
+
+#### Signals
+
+- `file_saved`  : Filename returns when changes are saved to a file.
+- `file_opened` : Filename returns when open a file.
+- `highlighted` : Html code returns when highlighted your code.
+
+<details>
+    <summary>Example</summary>
+
+    from PyQt5.QtWidgets import QApplication
+    from pyqtCuWi import QSyntaxHighlight, pyqtCuWiColor
+
+    app = QApplication([])
+    win = QSyntaxHighlight()
+    win.setWindowTitle('Code Highlight')
+    win.setDefaultStyle(pyqtCuWiColor.QTheme().DARK_RED)
+    win.show()
+    app.exec_()
+</details>
+
+[File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfQSyntaxHighlight.py)
+
+#### Output
+<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/qsyntaxhighlight.gif">

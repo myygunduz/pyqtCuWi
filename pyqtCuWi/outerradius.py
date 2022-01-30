@@ -7,7 +7,7 @@
 from PyQt5.QtWidgets import QWidget, QLineEdit, QHBoxLayout, QVBoxLayout, QLabel
 from PyQt5.QtCore import Qt, QSize
 
-from .pyqtCuWiErrors import InvalidDirectionType, InvalidStyleType, InvalidValue, TupleSizeError
+from .pyqtCuWiErrors import TupleSizeError, pyqtCuWiInvaledType
 
 class outerRadius(QWidget):
     _qssInfo = {
@@ -24,7 +24,7 @@ class outerRadius(QWidget):
         self.widget = widget()
         self.widget.setObjectName(self._objectName)
         if direction in ['left','right','up','down']: self._direction = direction
-        else: raise InvalidDirectionType(direction,['left','right','up','down'])
+        else: raise pyqtCuWiInvaledType("Direction",direction,['left','right','up','down'])
         self._width = width
         self._height = height
         self._layoutType = QVBoxLayout if self._direction != 'up' and self._direction != 'down' else QHBoxLayout
@@ -177,7 +177,7 @@ class outerRadius(QWidget):
         self.setStyleSheet(qss)
 
     def addWidgetQss(self,qssCode:str,Type:str = 'default',objectName:str = 'widget'):
-        if Type not  in ['default','hover','press']: raise InvalidStyleType(Type,['default','hover','press'])
+        if Type not  in ['default','hover','press']: raise pyqtCuWiInvaledType("Style",Type,['default','hover','press'])
         self._extraQss[Type] = qssCode
         self._objectName = objectName
         self.__Qss(extraQss=self._extraQss)
@@ -186,13 +186,13 @@ class outerRadius(QWidget):
         for i in qssCode:
             if i in self._qssInfo.keys():
                 if i == 'radius' and type(qssCode[i]) != int:
-                    raise InvalidValue(type(qssCode[i]),int)
+                    raise pyqtCuWiInvaledType("Value",qssCode[i],[int])
                 elif i != 'radius' and type(qssCode[i]) != tuple:
-                    raise InvalidValue(type(qssCode[i]),tuple)
+                    raise pyqtCuWiInvaledType("Value",qssCode[i],[tuple])
                 elif i != 'radius' and len(qssCode[i]) != 3:
                     raise TupleSizeError(3,outerRadius=True)
                 self._qssInfo[i] = qssCode[i]
             else:
-                raise  InvalidStyleType(i,self._qssInfo.keys())
+                raise  pyqtCuWiInvaledType("Style",i,self._qssInfo.keys())
         
         self.__Qss(extraQss=self._extraQss)

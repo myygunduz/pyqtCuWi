@@ -1,0 +1,240 @@
+{
+  "QHtmlTextEditor": {
+    "menuBar": {
+      "file": {
+        "new": {
+          "text": "New",
+          "shortcut": "Ctrl+N",
+          "icon": "document_new",
+          "show": true,
+          "checkable": false
+        },
+        "open": {
+          "text": "Open",
+          "shortcut": "Ctrl+O",
+          "icon": "document_open",
+          "show": true,
+          "checkable": false
+        },
+        "save": {
+          "text": "Save",
+          "shortcut": "Ctrl+S",
+          "icon": "document_save",
+          "show": true,
+          "checkable": false
+        },
+        "save_as": {
+          "text": "Save As",
+          "shortcut": "Ctrl+Shift+S",
+          "icon": "document_save_as",
+          "show": true,
+          "checkable": false
+        },
+        "print": {
+          "text": "Print",
+          "shortcut": "Ctrl+P",
+          "icon": "document_print",
+          "show": true,
+          "checkable": false
+        },
+        "quit": {
+          "text": "Quit",
+          "shortcut": "Ctrl+Q",
+          "icon": "application_exit",
+          "show": false,
+          "checkable": false
+        }
+      },
+      "edit": {
+        "undo": {
+          "text": "Undo",
+          "shortcut": "Ctrl+Z",
+          "icon": "edit_undo",
+          "show": true,
+          "checkable": false
+        },
+        "redo": {
+          "text": "Redo",
+          "shortcut": "Ctrl+Y",
+          "icon": "edit_redo",
+          "show": true,
+          "checkable": false
+        },
+        "cut": {
+          "text": "Cut",
+          "shortcut": "Ctrl+X",
+          "icon": "edit_cut",
+          "show": true,
+          "checkable": false
+        },
+        "copy": {
+          "text": "Copy",
+          "shortcut": "Ctrl+C",
+          "icon": "edit_copy",
+          "show": true,
+          "checkable": false
+        },
+        "paste": {
+          "text": "Paste",
+          "shortcut": "Ctrl+V",
+          "icon": "edit_paste",
+          "show": true,
+          "checkable": false
+        },
+        "select_all": {
+          "text": "Select All",
+          "shortcut": "Ctrl+A",
+          "icon": "edit_select_all",
+          "show": true,
+          "checkable": false
+        }
+      },
+      "format": {
+        "bold": {
+          "text": "Bold",
+          "shortcut": "Ctrl+B",
+          "icon": "format_bold",
+          "show": true,
+          "checkable": true
+        },
+        "italic": {
+          "text": "Italic",
+          "shortcut": "Ctrl+I",
+          "icon": "format_italic",
+          "show": false,
+          "checkable": true
+        },
+        "underline": {
+          "text": "Underline",
+          "shortcut": "Ctrl+U",
+          "icon": "format_underline",
+          "show": false,
+          "checkable": true
+        },
+        "align_left": {
+          "text": "Align Left",
+          "shortcut": "",
+          "icon": "format_align_left",
+          "show": true,
+          "checkable": true
+        },
+        "align_center": {
+          "text": "Align Center",
+          "shortcut": "",
+          "icon": "format_align_center",
+          "show": true,
+          "checkable": true
+        },
+        "align_right": {
+          "text": "Align Right",
+          "shortcut": "",
+          "icon": "format_align_right",
+          "show": true,
+          "checkable": true
+        },
+        "align_justify": {
+          "text": "Align Justify",
+          "shortcut": "",
+          "icon": "format_align_justify",
+          "show": true,
+          "checkable": true
+        }
+      },
+      "widgets": {
+        "font": {
+          "text": "Font",
+          "shortcut": "",
+          "icon": "format_font",
+          "show": true,
+          "checkable": false
+        },
+        "font_size": {
+          "text": "Font Size",
+          "shortcut": "",
+          "icon": "format_size",
+          "show": true,
+          "checkable": false
+        },
+        "font_color": {
+          "text": "Font Color",
+          "shortcut": "",
+          "icon": "format_color_text",
+          "show": true,
+          "checkable": false
+        },
+        "background_color": {
+          "text": "Background Color",
+          "shortcut": "",
+          "icon": "format_color_fill",
+          "show": true,
+          "checkable": false
+        },
+        "indent": {
+          "text": "Indent",
+          "shortcut": "",
+          "icon": "format_indent",
+          "show": false,
+          "checkable": true
+        },
+        "outdent": {
+          "text": "Outdent",
+          "shortcut": "",
+          "icon": "format_outdent",
+          "show": false,
+          "checkable": false
+        },
+        "insert_link": {
+          "text": "Create Link",
+          "shortcut": "",
+          "icon": "insert_link",
+          "show": true,
+          "checkable": false
+        },
+        "insert_image": {
+          "text": "Insert Image",
+          "shortcut": "",
+          "icon": "insert_image",
+          "show": true,
+          "checkable": false
+        },
+        "bullet_list": {
+          "text": "Insert Bullet List",
+          "shortcut": "",
+          "icon": "format_bullet_list",
+          "show": true,
+          "checkable": false
+        },
+        "number_list": {
+          "text": "Insert Numbered List",
+          "shortcut": "",
+          "icon": "format_number_list",
+          "show": true,
+          "checkable": false
+        },
+        "insert_code": {
+          "text": "Insert Code",
+          "shortcut": "",
+          "icon": "insert_code",
+          "show": true,
+          "checkable": false
+        }
+      },
+      "view": {
+        "settings": {
+          "text": "Settings",
+          "shortcut": "Ctrl+,",
+          "icon": "settings",
+          "show": true,
+          "checkable": false
+        },
+        "source_code": {
+          "text": "Source Code",
+          "shortcut": "Ctrl+H",
+          "icon": "hide_source_code",
+          "show": true,
+          "checkable": false
+        }
+      }
+    }
+  }
+}

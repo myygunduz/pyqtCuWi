@@ -4,14 +4,16 @@
 #                                                    #
 #                    rankWidget                      #
 
-from PyQt5.QtWidgets import QScrollArea, QWidget, QApplication, QVBoxLayout, QHBoxLayout, QLabel
+from PyQt5.QtWidgets import QScrollArea, QWidget, QVBoxLayout, QHBoxLayout, QLabel
 from PyQt5.QtCore import pyqtSignal, Qt
 
 from pyqt5Custom import StyledButton
 
-from .pyqtCuWiErrors import InvalidLayoutType, InvalidButtonType, InvalidValueType, TupleSizeError, InvalidButtonStyleType
+from .pyqtCuWiErrors import TupleSizeError, pyqtCuWiInvaledType
 
 from pathlib import Path
+
+from pyqtCuWi import pyqtCuWiErrors
 
 
 class rankWidget(QScrollArea):
@@ -32,7 +34,7 @@ class rankWidget(QScrollArea):
             self.layout.setContentsMargins(0,0,0,0)
             self.groupbox.setLayout(self.layout)
         else:
-            raise InvalidLayoutType()
+            raise pyqtCuWiInvaledType("Layout", self._layout_type, ["H","V"])
         
         self._main.resizeEvent = lambda a: self.setMaximumSize(self._main.width(),self._main.height())
 
@@ -97,7 +99,7 @@ class rankWidget(QScrollArea):
             else:
                 self._hideButton = value
         else:
-            raise InvalidValueType()
+            raise pyqtCuWiInvaledType("Value",value,["True","False","None"])
 
     def seticon(self,filepath:str,buttonType:str):
         if buttonType == 'rightArrow':self._rightArrow = filepath
@@ -105,14 +107,14 @@ class rankWidget(QScrollArea):
         elif buttonType == 'upArrow':self._upArrow = filepath
         elif buttonType == 'downArrow':self._downArrow = filepath
         elif buttonType == 'trash':self._trash = filepath
-        else: raise InvalidButtonType()
+        else: raise pyqtCuWiInvaledType("Button",buttonType,["rightArrow","leftArrow","upArrow","downArrow","trash"])
 
 
     def setstyledict(self, stylecode:tuple):
         if len(stylecode) >2:
             raise TupleSizeError(2)
         if len(stylecode) == 2 and stylecode[1] not in ['press','hover','default']: 
-            raise InvalidButtonStyleType
+            raise pyqtCuWiInvaledType("Button style",stylecode[1],["press","hover","default"])
         if len(stylecode) == 2:
             if 'hover' == stylecode[1]:
                 self._QssDictHover=stylecode

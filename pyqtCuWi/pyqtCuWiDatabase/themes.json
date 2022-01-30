@@ -1,0 +1,71 @@
+{
+    "popUp":{
+        "darkMode":{
+            "titleBar": {
+                "backgroundColor": {
+                    "hex": "#2b2b2b",
+                    "rgb": "(43, 43, 43)"},
+                "textColor": {
+                    "hex": "#FAFAFA",
+                    "rgb": "(250, 250, 250)"},
+                "button": {
+                    "hex": "#2b2b2b",
+                    "rgb": "(43, 43, 43)"},
+                "buttonHover": {
+                    "hex": "#ff0000",
+                    "rgb": "(255, 0, 0)"}
+            },
+            "content":{
+                "backgroundColor": {
+                    "hex": "#212121",
+                    "rgb": "(33, 33, 33)"
+                },
+                "textColor": {
+                    "hex": "#FAFAFA",
+                    "rgb": "(250, 250, 250)"}
+            },
+            "scrollBar": {
+                "backgroundColor": {
+                    "hex": "#212121",
+                    "rgb": "(33, 33, 33)"},
+                "scrollColor": {
+                    "hex": "#2b2b2b",
+                    "rgb": "(43, 43, 43)"}
+            }
+        },
+        "lightMode":{
+            "titleBar": {
+                "backgroundColor": {
+                    "hex": "#FAFAFA",
+                    "rgb": "(250, 250, 250)"
+                },
+                "textColor": {
+                    "hex": "#2b2b2b",
+                    "rgb": "(43, 43, 43)"},
+                "button": {
+                    "hex": "#FAFAFA",
+                    "rgb": "(250, 250, 250)"},
+                "buttonHover": {
+                    "hex": "#ff0000",
+                    "rgb": "(255, 0, 0)"}
+            },
+            "content":{
+                "backgroundColor": {
+                    "hex": "#f0ebeb",
+                    "rgb": "(240, 235, 235)"},
+                "textColor": {
+                    "hex": "#2b2b2b",
+                    "rgb": "(43, 43, 43)"}
+            },
+            "scrollBar": {
+                "backgroundColor": {
+                    "hex": "#f0ebeb",
+                    "rgb": "(240, 235, 235)"},
+                "scrollColor": {
+                    "hex": "#FAFAFA",
+                    "rgb": "(250, 250, 250)"}
+            }
+        }
+
+    }
+}

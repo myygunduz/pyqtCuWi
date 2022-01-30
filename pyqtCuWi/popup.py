@@ -15,7 +15,7 @@ from pyqt5Custom import ImageBox
 
 from .pyqtCuWiModules import readJ,writeJ
 
-from .pyqtCuWiErrors import InvalidStyleVariable, InvalidThemeType, InvalidTitleType, FailedToAddTitleType
+from .pyqtCuWiErrors import InvalidStyleVariable, FailedToAddTitleType, pyqtCuWiInvaledType
 
 from pathlib import Path
 class popUp(QWidget):
@@ -154,8 +154,10 @@ class popUp(QWidget):
 
     def __Qss(self,titleType=None,mode='dark',noneControl = False):
         qssCodesClass = self._qssCodes(self)
-        if mode == 'dark' or mode == 'light': return qssCodesClass.defaultQss(colorMode='darkMode' if mode == 'dark' else 'lightMode',titleType=titleType,scrollBarWidget=self._mainScrollArea,titleTypeColors=self._customTitleType,noneControl=noneControl)
-        if mode == 'custom': return qssCodesClass.customQss(titleType=titleType,styleDict=self._customQssThemplate,scrollBarWidget=self._mainScrollArea,titleTypeColors=self._customTitleType,noneControl=noneControl)
+        if mode == 'dark' or mode == 'light': 
+            return qssCodesClass.defaultQss(colorMode='darkMode' if mode == 'dark' else 'lightMode',titleType=titleType,scrollBarWidget=self._mainScrollArea,titleTypeColors=self._customTitleType,noneControl=noneControl)
+        if mode == 'custom': 
+            return qssCodesClass.customQss(titleType=titleType,styleDict=self._customQssThemplate,scrollBarWidget=self._mainScrollArea,titleTypeColors=self._customTitleType,noneControl=noneControl)
     
     def __close(self):
         self.blockingWindow.deleteLater()
@@ -184,7 +186,7 @@ class popUp(QWidget):
 
     def setThemeType(self,themeType:str):
         if themeType not in ['dark','light','custom']:
-            raise  InvalidThemeType(themeType,['dark','light','custom'])
+            raise  pyqtCuWiInvaledType("Theme",themeType,['dark','light','custom'])
         self._themeType = themeType
         self.themeUpdate()
 
@@ -257,7 +259,7 @@ class popUp(QWidget):
             self._main = main
             parent = Path(__file__).parent
 
-            self._colors = readJ(str(Path(parent, 'pyqtCuWiDatabase', 'colors.json')))['popUp']
+            self._colors = readJ(str(Path(parent, 'pyqtCuWiDatabase', 'themes.json')))['popUp']
         def defaultQss(self,colorMode,titleType:str=None,scrollBarWidget=None,titleTypeColors=None,noneControl = False):
             self._titleTypeColors = titleTypeColors
             colors = self._colors[colorMode]
@@ -323,7 +325,7 @@ class popUp(QWidget):
                 )
                 return qss
             elif titleType not in self._titleTypeColors.keys() and noneControl != False:
-                raise InvalidTitleType(titleType,self._titleTypeColors.keys())
+                raise pyqtCuWiInvaledType("Title",titleType,self._titleTypeColors.keys())
 
             backgroundColor = colors['scrollBar']['backgroundColor']['hex']
             foregroundColor = colors['scrollBar']['scrollColor']['hex']
@@ -398,7 +400,7 @@ class popUp(QWidget):
                 )
                 return qss
             elif titleType not in self._titleTypeColors.keys() and noneControl != False:
-                raise InvalidTitleType(titleType,self._titleTypeColors.keys())
+                raise pyqtCuWiInvaledType("Title",titleType,self._titleTypeColors.keys())
 
             backgroundColor = styleDict['scrollBar-background-color']
             foregroundColor = styleDict['scrollBar-foreground-color']
