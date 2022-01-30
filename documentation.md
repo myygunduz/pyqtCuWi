@@ -719,7 +719,7 @@ QFreeBoxLayout. Widget but its name is layout. To show widgets as scattered imag
 [File](https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfQFBoxLayout.py)
 
 #### Output:
-<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/qfboxlayout.gif">
+<img src="https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/QFBoxLayout.gif">
 
 ### Tag Area
 A widget for tags.
