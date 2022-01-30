@@ -61,7 +61,7 @@ python -m pip install pyqtCuWi
 <!--#Aug 30, 2021$-->
 
 [QFBoxLayoutD]: https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qfboxlayout
-[QFBoxLayoutI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/qfboxlayout.gif?raw=true
+[QFBoxLayoutI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/QFBoxLayout.gif?raw=true
 [QFBoxLayoutE]: https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfQFBoxLayout.py
 <!--#Sep 3, 2021$-->
 
