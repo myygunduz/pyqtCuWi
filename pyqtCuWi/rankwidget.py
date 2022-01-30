@@ -13,8 +13,6 @@ from .pyqtCuWiErrors import TupleSizeError, pyqtCuWiInvaledType
 
 from pathlib import Path
 
-from pyqtCuWi import pyqtCuWiErrors
-
 
 class rankWidget(QScrollArea):
     clickedButton = pyqtSignal(object)

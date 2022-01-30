@@ -1,40 +1,28 @@
-import setuptools
-
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-setuptools.setup(
-    name="pyqtCuWi",
-    version="1.4.0",
-    license="GPL v3.0",
-    author="Mücahit Yusuf Yasin Gündüz",
-    author_email="myygunduz@gmail.com",
-    description="Custom Widgets For PyQt5",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/myygunduz/pyqtCuWi",
-    project_urls={
-    'Documentation': 'https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md',
-    },
-    download_url="https://github.com/myygunduz/pyqtCuWi/archive/refs/tags/1.4.0.tar.gz",
-    packages=setuptools.find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-        "Operating System :: OS Independent"
-    ],
-    keywords = ["PyQt5","Custom Widgets","myygunduz","python"],
-    python_requires='>=3.6.0',
-    install_requires=[
-        "beautifulsoup4>=4.10.0",
-        "Pygments>=2.11.1"
-        "PyQt5>=5.15.3"
-        "pyqt5-plugins>=5.15.4.2.1"
-        "PyQt5-Qt5>=5.15.1"
-        "PyQt5-sip>=12.8.0"
-        "pyqt5-tools>=5.15.4.3.1"
-        "pyqt5Custom>=1.0.0"
-        "qt-material>=2.8.18"
-        "qt5-applications>=5.15.2.2.1"
-        "qt5-tools>=5.15.2.1.1"
-    ]
+from distutils.core import setup
+setup(
+  name = 'pyqtCuWi',         # How you named your package folder (MyLib)
+  packages = ['pyqtCuWi'],   # Chose the same as "name"
+  version = '1.4.1',      # Start with a small number and increase it with every change you make
+  license='GPL v3.0',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
+  description = 'Custom Widgets For PyQt5',   # Give a short description about your library
+  author = 'Mücahit Yusuf Yasin Gündüz',                   # Type in your name
+  author_email = 'myygunduz@gmail.com',      # Type in your E-Mail
+  url = 'https://github.com/myygunduz/pyqtCuWi',   # Provide either the link to your github or to your website
+  download_url = 'https://github.com/myygunduz/pyqtCuWi/archive/refs/tags/1.4.1.tar.gz',    # I explain this later on
+  keywords = ['PyQt5', 'python', 'GUI'],   # Keywords that define your package best
+  install_requires=[            # I get to this in a second
+          "PyQt5",
+          "pyqt5-plugins",
+          "PyQt5-Qt5",
+          "PyQt5-sip",
+          "pyqt5-tools",
+          "pyqt5Custom",
+          "Pygments",
+          "Beautifulsoup4"
+      ],
+  classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent"
+  ],
 )
