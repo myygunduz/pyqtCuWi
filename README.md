@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/github/forks/myygunduz/pyqtCuWi?style=flat-square&color=white">
 </p>
 
-<!--
+
 <h2>Use PIP To Download</h2>
 
 ```
@@ -19,7 +19,7 @@ OR
 ```
 python -m pip install pyqtCuWi==1.4.0
 ```
-$-->
+
 
 <h2>Custom Widgets</h2>
 
