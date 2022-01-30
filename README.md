@@ -36,47 +36,47 @@ python -m pip install pyqtCuWi
 
 
 [IconButtonD]: https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#iconbutton
-[IconButtonI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/iconButton.gif?raw=true
+[IconButtonI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/iconButton.gif
 [IconButtonE]: https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfIconButton.py
 <!--#Aug 8, 2021$-->
 
 [RankWidgetD]: https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#rank-widget
-[RankWidgetI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/rankWidget.gif?raw=true
+[RankWidgetI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/rankWidget.gif
 [RankWidgetE]: https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfRankWidget.py
 <!--#Aug 8, 2021$-->
 
 [PopUpD]: https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#pop-up
-[PopUpI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/popUp.gif?raw=true
+[PopUpI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/popUp.gif
 [PopUpE]: https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampeOfPopUp%26OuterRadius.py
 <!--#Aug 8, 2021$-->
 
 [OuterRadiusD]: https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#outer-radius
-[OuterRadiusI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/outerRadius.gif?raw=true
+[OuterRadiusI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/outerRadius.gif
 [OuterRadiusE]: https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampeOfPopUp%26OuterRadius.py
 <!--#Aug 8, 2021$-->
 
 [LoadingScreenD]: https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#loading-screen
-[LoadingScreenI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/loadingScreen.gif?raw=true
+[LoadingScreenI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/loadingScreen.gif
 [LoadingScreenE]: https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfLoadingScreen.py
 <!--#Aug 30, 2021$-->
 
 [QFBoxLayoutD]: https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qfboxlayout
-[QFBoxLayoutI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/QFBoxLayout.gif?raw=true
+[QFBoxLayoutI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/QFBoxLayout.gif
 [QFBoxLayoutE]: https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfQFBoxLayout.py
 <!--#Sep 3, 2021$-->
 
 [TagAreaD]: https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#tag-area
-[TagAreaI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/tagArea.gif?raw=true
+[TagAreaI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/tagArea.gif
 [TagAreaE]: https://github.com/myygunduz/pyqtCuWi/blob/main/example/exampleOfTagArea.py
 <!--#Sep 4, 2021$-->
 
 [QHtmlEditorD]: https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qhtmltexteditor
-[QHtmlEditorI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/qhtmltexteditor.gif?raw=true
+[QHtmlEditorI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/qhtmltexteditor.gif
 [QHtmlEditorE]: https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfQHtmlTextEditor.py
 <!--#Jan 30, 2022 $-->
 
 [QSyntaxHighlightD]: https://github.com/myygunduz/pyqtCuWi/blob/main/documentation.md#qsyntaxhighlight
-[QSyntaxHighlightI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/qsyntaxhighlight.gif?raw=true
+[QSyntaxHighlightI]: https://github.com/myygunduz/pyqtCuWi/blob/main/gifs/qsyntaxhighlight.gif
 [QSyntaxHighlightE]: https://github.com/myygunduz/pyqtCuwi/blob/main/example/exampleOfQSyntaxHighlight.py
 <!--#Jan 30, 2022 $-->
 
