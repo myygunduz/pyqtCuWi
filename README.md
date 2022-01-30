@@ -13,11 +13,11 @@
 <h2>Use PIP To Download</h2>
 
 ```
-pip install pyqtCuWi
+pip install pyqtCuWi==1.4.0
 ```
 OR
 ```
-python -m pip install pyqtCuWi
+python -m pip install pyqtCuWi==1.4.0
 ```
 
 
