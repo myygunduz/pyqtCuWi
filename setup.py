@@ -23,18 +23,18 @@ setuptools.setup(
         "Operating System :: OS Independent"
     ],
     keywords = ["PyQt5","Custom Widgets","myygunduz","python"],
-    python_requires='>=3.8.0',
+    python_requires='>=3.6.0',
     install_requires=[
         "beautifulsoup4>=4.10.0",
-        "Pygments>=2.11.2"
-        "PyQt5>=5.15.4"
-        "pyqt5-plugins>=5.15.4.2.2"
-        "PyQt5-Qt5>=5.15.2"
-        "PyQt5-sip>=12.9.0"
-        "pyqt5-tools>=5.15.4.3.2"
-        "pyqt5Custom>=1.0.1"
-        "qt-material>=2.8.19"
-        "qt5-applications>=5.15.2.2.2"
-        "qt5-tools>=5.15.2.1.2"
+        "Pygments>=2.11.1"
+        "PyQt5>=5.15.3"
+        "pyqt5-plugins>=5.15.4.2.1"
+        "PyQt5-Qt5>=5.15.1"
+        "PyQt5-sip>=12.8.0"
+        "pyqt5-tools>=5.15.4.3.1"
+        "pyqt5Custom>=1.0.0"
+        "qt-material>=2.8.18"
+        "qt5-applications>=5.15.2.2.1"
+        "qt5-tools>=5.15.2.1.1"
     ]
 )

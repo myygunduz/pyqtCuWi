@@ -1,6 +1,6 @@
 <h1 align=center> pyqtCuWi </h1>
 <p>
-  <img src="https://img.shields.io/badge/python-3.8%2B-informational?style=flat-square&logo=python">
+  <img src="https://img.shields.io/badge/python-3.6%2B-informational?style=flat-square&logo=python">
   <img src="https://img.shields.io/badge/license-GPL%203.0-succes.svg?style=flat-square&logo=license">
   <img src="https://img.shields.io/badge/version-1.4.0-important?style=flat-square">
   <a href="https://pypi.org/project/pyqtCuWi/"><img src="https://img.shields.io/badge/pypi-pyqtCuWi-cyan?style=flat-square"></a>
@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/github/forks/myygunduz/pyqtCuWi?style=flat-square&color=white">
 </p>
 
-
+<!--
 <h2>Use PIP To Download</h2>
 
 ```
@@ -19,7 +19,7 @@ OR
 ```
 python -m pip install pyqtCuWi==1.4.0
 ```
-
+$-->
 
 <h2>Custom Widgets</h2>
 
